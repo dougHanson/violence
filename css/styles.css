@@ -1,28 +1,28 @@
 body {
-  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320))); }
+  font-size: calc(14px + 6 * ((100vw - 360px) / (1560))); }
 
 p {
-  margin: 40px 0;
+  margin: 2em 0;
   line-height: 1.5em; }
 
 h1 {
   font-family: 'Futura LT Condensed';
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 3.5em;
   line-height: 1em;
   padding: 2em 0;
   font-weight: bold;
   color: white; }
   @media (min-width: 576px) {
     h1 {
-      font-size: 60px; } }
+      font-size: 4.25em; } }
   @media (min-width: 768px) {
     h1 {
-      font-size: 112px;
+      font-size: 6em;
       padding: 1.33em 0; } }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.25em;
   font-weight: bold;
   font-family: 'Futura LT Condensed', serif;
   text-transform: uppercase; }
@@ -34,22 +34,33 @@ img {
 ul,
 li {
   list-style: none;
-  padding: 8px 0;
-  font-size: 1.125em; }
+  padding: 0.3em 0; }
 
 .hero {
   background-color: #231f20;
-  background-image: url(../images/hero.png);
+  background-image: url(../images/hero-boy.png);
   background-repeat: no-repeat;
-  background-position: 100px;
+  background-position: 5em;
   background-size: cover;
   color: white; }
+  .hero .bruise {
+    -webkit-animation-duration: 4s;
+    /* Safari 4.0 - 8.0 */
+    animation-duration: 4s; }
+  .hero .bruise--1 {
+    -webkit-animation-name: bruises;
+    animation-name: bruise--1; }
+  .hero .bruise--2 {
+    -webkit-animation-name: bruises;
+    -webkit-animation-duration: 4s;
+    animation-name: bruise--2;
+    animation-duration: 2s; }
   @media (min-width: 576px) {
     .hero {
-      background-position: 150px; } }
+      background-position: calc(10em + 30%); } }
   @media (min-width: 768px) {
     .hero {
-      background-position: calc(300px + 40%); } }
+      background-position: calc(15em + 40%); } }
   @media (min-width: 1200px) {
     .hero {
       background-position: right;
@@ -58,6 +69,22 @@ li {
     .hero {
       background-position: 75%;
       background-size: contain; } }
+
+@keyframes bruise--1 {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes bruise--2 {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .intro {
   background-image: url(../images/doodles.png);
@@ -68,18 +95,18 @@ li {
     line-height: 2em; }
   .intro img {
     display: block;
-    margin: 0px auto 50px;
+    margin: 0 auto 2em;
     width: 100%;
     max-width: 300px; }
     @media (min-width: 992px) {
       .intro img {
-        margin: 50px auto 0; } }
+        margin: 2.5em auto 0; } }
   @media (min-width: 768px) {
     .intro {
-      padding: 40px 0; } }
+      padding: 2em 0; } }
   @media (min-width: 1200px) {
     .intro {
-      padding: 60px 0; } }
+      padding: 3em 0; } }
 
 .quotation {
   background: #252525;
@@ -89,7 +116,6 @@ li {
   background-position: top;
   background-attachment: fixed;
   color: white;
-  min-height: 320px;
   font-family: 'Courier New';
   font-weight: bold; }
   .quotation p {
@@ -99,15 +125,21 @@ li {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  padding: 60px 0; }
+  padding: 4em 0; }
 
 .cta {
   background: #252525;
   background-image: url(../images/doodles.png);
   background-size: 50%;
   background-position: top;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #ddd;
   color: white;
-  padding: 80px 0 60px 0; }
+  padding: 4em 0 3em 0;
+  text-align: center; }
+  @media (min-width: 992px) {
+    .cta {
+      text-align: left; } }
   .cta h2.pink {
     background: linear-gradient(to right, #ff0066, #ff00c6);
     -webkit-background-clip: text;
@@ -115,21 +147,28 @@ li {
   .cta h2.green {
     background: linear-gradient(to right, #6cb202, #00bafe);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; }
+    -webkit-text-fill-color: transparent;
+    margin-top: 1.5em; }
+    @media (min-width: 768px) {
+      .cta h2.green {
+        margin-top: 0; } }
 
 .social {
-  padding: 60px 0;
+  padding: 4em 0;
   width: 100%;
   background-color: #00a296;
   color: white;
   text-align: center; }
   .social img {
-    display: inline-block;
-    margin-right: 40px;
-    height: 90px; }
+    display: block;
+    width: 100%;
+    max-width: 4em;
+    min-width: 3em; }
+    .social img svg {
+      fill: white; }
 
 .footer {
   margin-bottom: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 1em 0;
   text-align: center; }
