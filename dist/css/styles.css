@@ -59,15 +59,28 @@ li {
   animation-timing-function: linear; }
   .hero .likes {
     position: absolute;
+    display: none;
     right: 12%;
     bottom: 20px;
-    width: 240px;
     opacity: 0;
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family: 'Courier New', sans-serif;
+    text-shadow: 1px 1px 1px #333;
     animation-name: likes;
-    animation-duration: 2.4s;
+    animation-duration: 2.9s;
     animation-fill-mode: forwards;
     animation-delay: 0s;
     animation-timing-function: linear; }
+    @media (min-width: 576px) {
+      .hero .likes {
+        display: block; } }
+    .hero .likes__number {
+      color: white;
+      font-weight: bold;
+      font-size: 2em;
+      font-family: 'Futura LT Condensed';
+      padding-top: 1em; }
   .hero .likes--1 {
     animation-delay: 2s; }
   .hero .likes--2 {
