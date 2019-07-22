@@ -1,5 +1,13 @@
 body {
-  font-size: calc(14px + 6 * ((100vw - 360px) / (1560))); }
+  font-family: 'Open sans', sans-serif;
+  font-size: calc(15px + 5 * ((100vw - 360px) / (1560))); }
+
+body:after {
+  overflow: hidden;
+  display: block;
+  height: 0;
+  width: 0;
+  content: url("../images/hero-girl-1.png") url("../images/hero-girl-2.png") url("../images/hero-girl-3.png") url("../images/hero-girl-4.png"); }
 
 p {
   margin: 2em 0;
@@ -19,10 +27,10 @@ h1 {
   @media (min-width: 768px) {
     h1 {
       font-size: 6em;
-      padding: 1.33em 0; } }
+      padding: 1em 0; } }
 
 h2 {
-  font-size: 2.25em;
+  font-size: 2.2em;
   font-weight: bold;
   font-family: 'Futura LT Condensed', serif;
   text-transform: uppercase; }
@@ -38,28 +46,34 @@ li {
 
 .hero {
   background-color: #231f20;
-  background-image: url(../images/hero.png);
+  background-image: url(../images/hero-girl-1.png);
   background-repeat: no-repeat;
   background-position: 5em;
   background-size: cover;
-  color: white; }
-  .hero .bruise {
-    -webkit-animation-duration: 4s;
-    /* Safari 4.0 - 8.0 */
-    animation-duration: 4s;
-    position: absolute; }
-  .hero .bruise--1 {
-    -webkit-animation-name: bruises;
-    animation-name: bruise--1;
-    top: 25em;
-    right: 28em;
-    height: 130px; }
-  .hero .bruise--2 {
-    -webkit-animation-name: bruises;
-    animation-name: bruise--2;
-    top: 13em;
-    right: 26em;
-    height: 160px; }
+  color: white;
+  position: relative;
+  animation-name: hero-animate;
+  animation-duration: 12s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  animation-timing-function: linear; }
+  .hero .likes {
+    position: absolute;
+    right: 12%;
+    bottom: 20px;
+    width: 240px;
+    opacity: 0;
+    animation-name: likes;
+    animation-duration: 2.4s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-timing-function: linear; }
+  .hero .likes--1 {
+    animation-delay: 2s; }
+  .hero .likes--2 {
+    animation-delay: 6s; }
+  .hero .likes--3 {
+    animation-delay: 10s; }
   @media (min-width: 576px) {
     .hero {
       background-position: calc(10em + 30%); } }
@@ -68,44 +82,53 @@ li {
       background-position: calc(15em + 40%); } }
   @media (min-width: 1200px) {
     .hero {
-      background-position: right;
+      background-position: 90%;
       background-size: contain; } }
-  @media (min-width: 1920px) {
+  @media (min-width: 2000px) {
     .hero {
-      background-position: 75%;
-      background-size: contain; } }
-
-@keyframes bruise--1 {
-  0% {
-    opacity: 0; }
-  25% {
-    opacity: 0; }
-  50% {
-    opacity: 1; } }
-
-@keyframes bruise--2 {
-  0% {
-    opacity: 0; }
-  75% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
+      background-position: 75%; } }
 
 .intro {
   background-image: url(../images/doodles.png);
   background-size: 50%;
   background-position: center;
-  padding: 0; }
+  padding: 0;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing; }
   .intro p {
     line-height: 2em; }
   .intro img {
     display: block;
     margin: 0 auto 2em;
     width: 100%;
-    max-width: 300px; }
+    max-width: 200px;
+    opacity: 0; }
     @media (min-width: 992px) {
       .intro img {
         margin: 2.5em auto 0; } }
+  .intro .mobile-fight {
+    cursor: hand;
+    cursor: pointer; }
+  .intro .logo {
+    position: absolute;
+    right: -999px;
+    transform: rotate(20deg);
+    left: -50%;
+    right: -50%;
+    width: auto;
+    max-width: 280px; }
+  .intro .logo-visible {
+    top: 14%;
+    right: -50%;
+    opacity: 1;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
+    @media (min-width: 992px) {
+      .intro .logo-visible {
+        top: 7%; } }
   @media (min-width: 768px) {
     .intro {
       padding: 2em 0; } }
@@ -115,7 +138,7 @@ li {
 
 .quotation {
   background: #252525;
-  background-image: url(../images/boy-upset.png);
+  background-image: url(../images/girl-upset.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -129,7 +152,7 @@ li {
 .mask {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1);
   padding: 4em 0; }
 
 .cta {
@@ -141,21 +164,22 @@ li {
   border-bottom: 1px solid #ddd;
   color: white;
   padding: 4em 0 3em 0;
-  text-align: center; }
+  text-align: center;
+  animation: hue 40s infinite linear; }
   @media (min-width: 992px) {
     .cta {
       text-align: left; } }
-  .cta h2.pink {
-    background: linear-gradient(to right, #ff0066, #ff00c6);
+  .cta h2.reasons {
+    background: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
-  .cta h2.green {
-    background: linear-gradient(to right, #6cb202, #00bafe);
+  .cta h2.dealing {
+    background: linear-gradient(92deg, #feab3a 0%, #edd448 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1.5em; }
     @media (min-width: 768px) {
-      .cta h2.green {
+      .cta h2.dealing {
         margin-top: 0; } }
 
 .social {
@@ -169,6 +193,9 @@ li {
     width: 100%;
     max-width: 4em;
     min-width: 3em; }
+    .social img:hover {
+      animation-name: tada;
+      animation-duration: 1s; }
     .social img svg {
       fill: white; }
 
@@ -177,3 +204,97 @@ li {
   width: 100%;
   padding: 1em 0;
   text-align: center; }
+
+@keyframes hero-animate {
+  33% {
+    background-image: url(../images/hero-girl-2.png); }
+  67% {
+    background-image: url(../images/hero-girl-3.png); }
+  100% {
+    background-image: url(../images/hero-girl-4.png); } }
+
+@keyframes likes {
+  0% {
+    opacity: 0;
+    bottom: 20px; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    bottom: 260px; } }
+
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg); }
+  to {
+    filter: hue-rotate(-360deg); } }
+
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3); }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1); }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03); }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+.bounceIn {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+
+@keyframes logoVisible {
+  0% {
+    transform: rotate(-10deg); }
+  50% {
+    transform: rotate(10deg); }
+  100% {
+    transform: rotate(-10deg); } }

@@ -10,16 +10,18 @@
 </head>
 <body>
 
-  <section class="hero" style="position: relative;">
+  <section class="hero">
     <div class="container">
       <div class="row">  
         <div class="col-sm-8">
           <h1>What if<br>this was<br>your<br>friend?</h1>
         </div>
       </div>
-    </div>   
-<!--    <img class="bruise bruise--1" src="images/bruise.png" />-->
-<!--    <img class="bruise bruise--2" src="images/black-eye.png" />-->
+    </div>  
+    
+    <img class="likes likes--1" src="images/likes-1.png" alt="Fight video likes increasing" />
+    <img class="likes likes--2" src="images/likes-2.png" alt="Fight video likes increasing" />
+    <img class="likes likes--3" src="images/likes-3.png" alt="Fight video likes increasing" />
   </section>
 
   <section class="intro">
@@ -28,9 +30,13 @@
         <div class="col-lg-9">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel magna fan boy facilisis. </p>
+          <p><strong>Simply scroll past videos like this one.</strong></p>          
         </div>
         <div class="col-lg-3">
-          <img src="images/logo.svg" alt="No voice to violence" />
+          <div style="position: relative;">
+            <img src="images/mobile-fight.png" alt="Fight video on a mobile phone" class="mobile-fight" id="js-mobile-fight" />
+            <img src="images/logo.svg" alt="No voice to violence" class="logo" id="js-logo" />            
+          </div>
         </div>
       </div>
     </div>
@@ -53,23 +59,23 @@
     <div class="container">
       <div class="row justify-content-around">
         <div class="col-lg-4 col-md-6">
-          <h2 class="pink">Five reasons to not&nbsp;share&nbsp;fights</h2>
+          <h2 class="reasons">Five reasons to not&nbsp;share&nbsp;fights</h2>
           <ul>
-            <li>It fuels more fights.</li>
-            <li>It fuels more fights.</li>
-            <li>More kids get hurt.</li>
-            <li>It's against the law.</li>
-            <li>You want school to be safe.</li>          
+            <li>It fuels more fights</li>
+            <li>It encourages the bullies</li>
+            <li>More kids get hurt</li>
+            <li>It's against the law</li>
+            <li>You want school to be safe</li>          
           </ul>
         </div>
         <div class="col-lg-4 col-md-6">
-          <h2 class="green">How should I&nbsp;deal with&nbsp;fight&nbsp;videos?</h2>
+          <h2 class="dealing">How should I&nbsp;deal with fight&nbsp;videos?</h2>
           <ul>        
-            <li>Scroll past them.</li>
-            <li>Don't share them with friends.</li>
-            <li>Report them as inappropriate.</li>
-            <li>Tell friends sharing is illegal.</li>
-            <li>Suggest other videos to share.</li>
+            <li>Scroll past them</li>
+            <li>Don't share them with friends</li>
+            <li>Report them as inappropriate</li>
+            <li>Tell friends sharing is illegal</li>
+            <li>Suggest other videos to share</li>
           </ul>         
         </div>
       </div>
@@ -103,6 +109,28 @@
   <section class="footer">
     <small>All contents copyright Government of Western Australia, unless otherwise&nbsp;stated.</small>
   </section>
+
+
+
+<script>
+  //use window.scrollY
+  var scrollpos = window.scrollY;
+  var mobileFight = document.getElementById("js-mobile-fight");
+  var logo = document.getElementById("js-logo");
+
+  window.addEventListener('scroll', function() {
+    scrollpos = window.scrollY;
+    if (scrollpos > 60) {
+      mobileFight.classList.add("bounceIn");
+    }
+  });
+
+  mobileFight.onclick = function(e) {
+    logo.classList.add("logo-visible");
+  }
+</script>
+
+
 
 </body>
 </html>
