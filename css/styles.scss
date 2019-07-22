@@ -1,6 +1,6 @@
 // vars to control responsive font sizes
 $min_font_size: 15;
-$max_font_size: 20;
+$max_font_size: 19;
 $min_viewport_width: 360;
 $max_viewport_width: 1920;
 
@@ -16,7 +16,7 @@ body:after {
   display: block;
   height: 0;
   width: 0;
-  content: url('../images/hero-girl-1.png') url('../images/hero-girl-2.png') url('../images/hero-girl-3.png') url('../images/hero-girl-4.png')
+  content: url('../images/hero-girl-1.jpg') url('../images/hero-girl-2.jpg') url('../images/hero-girl-3.jpg') url('../images/hero-girl-4.jpg')
 }
 
 p {
@@ -63,7 +63,7 @@ li {
 
 .hero {
   background-color: #231f20;
-  background-image: url(../images/hero-girl-1.png);
+  background-image: url(../images/hero-girl-1.jpg);
   background-repeat: no-repeat;
   background-position: 5em;
   background-size: cover;
@@ -78,20 +78,20 @@ li {
 
   .likes {
     position: absolute;
-    display: none;
-    
-  @media (min-width: 576px) {
-    display: block;
-  }
-    
+    display: none; //hide on mobile
     right: 12%;
     bottom: 20px;
     opacity: 0;
-    
     font-size: 1.25em; 
     font-weight: bold; 
     font-family: 'Courier New', sans-serif; 
     text-shadow: 1px 1px 1px #333;
+
+    animation-name: likes;
+    animation-duration: 2.9s;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-timing-function: linear;
 
     &__number {
       color: white;
@@ -100,25 +100,17 @@ li {
       font-family: 'Futura LT Condensed'; 
       padding-top: 1em;
     }
-
-    animation-name: likes;
-    animation-duration: 2.9s;
-    animation-fill-mode: forwards;
-    animation-delay: 0s;
-    animation-timing-function: linear;
+ 
+    @media (min-width: 576px) {
+      display: block;
+    }    
   }
 
-  .likes--1 {
-    animation-delay: 2s;
-  }
+  .likes--1 { animation-delay: 2s; }
 
-  .likes--2 {
-    animation-delay: 6s;
-  }
+  .likes--2 { animation-delay: 6s; }
 
-  .likes--3 {
-    animation-delay: 10s;
-  }
+  .likes--3 { animation-delay: 10s; }
 
 
   @media (min-width: 576px) {
@@ -147,7 +139,6 @@ li {
   cursor: grabbing;
   cursor: -moz-grabbing;
   cursor: -webkit-grabbing;  
-
 
   p {
     line-height: 2em;
@@ -302,9 +293,9 @@ li {
 
 // HERO BANNER IMAGE ANIMATION
 @keyframes hero-animate {
-  33% { background-image: url(../images/hero-girl-2.png) };
-  67% { background-image: url(../images/hero-girl-3.png) };
-  100% { background-image: url(../images/hero-girl-4.png) };
+  33% { background-image: url(../images/hero-girl-2.jpg) };
+  67% { background-image: url(../images/hero-girl-3.jpg) };
+  100% { background-image: url(../images/hero-girl-4.jpg) };
 }
 
 // HERO BANNER LIKES FLOATING UPWARD

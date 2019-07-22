@@ -1,13 +1,13 @@
 body {
   font-family: 'Open sans', sans-serif;
-  font-size: calc(15px + 5 * ((100vw - 360px) / (1560))); }
+  font-size: calc(15px + 4 * ((100vw - 360px) / (1560))); }
 
 body:after {
   overflow: hidden;
   display: block;
   height: 0;
   width: 0;
-  content: url("../images/hero-girl-1.png") url("../images/hero-girl-2.png") url("../images/hero-girl-3.png") url("../images/hero-girl-4.png"); }
+  content: url("../images/hero-girl-1.jpg") url("../images/hero-girl-2.jpg") url("../images/hero-girl-3.jpg") url("../images/hero-girl-4.jpg"); }
 
 p {
   margin: 2em 0;
@@ -46,7 +46,7 @@ li {
 
 .hero {
   background-color: #231f20;
-  background-image: url(../images/hero-girl-1.png);
+  background-image: url(../images/hero-girl-1.jpg);
   background-repeat: no-repeat;
   background-position: 5em;
   background-size: cover;
@@ -72,15 +72,15 @@ li {
     animation-fill-mode: forwards;
     animation-delay: 0s;
     animation-timing-function: linear; }
-    @media (min-width: 576px) {
-      .hero .likes {
-        display: block; } }
     .hero .likes__number {
       color: white;
       font-weight: bold;
       font-size: 2em;
       font-family: 'Futura LT Condensed';
       padding-top: 1em; }
+    @media (min-width: 576px) {
+      .hero .likes {
+        display: block; } }
   .hero .likes--1 {
     animation-delay: 2s; }
   .hero .likes--2 {
@@ -220,11 +220,11 @@ li {
 
 @keyframes hero-animate {
   33% {
-    background-image: url(../images/hero-girl-2.png); }
+    background-image: url(../images/hero-girl-2.jpg); }
   67% {
-    background-image: url(../images/hero-girl-3.png); }
+    background-image: url(../images/hero-girl-3.jpg); }
   100% {
-    background-image: url(../images/hero-girl-4.png); } }
+    background-image: url(../images/hero-girl-4.jpg); } }
 
 @keyframes likes {
   0% {
