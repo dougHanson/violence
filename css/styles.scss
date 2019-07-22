@@ -52,7 +52,7 @@ li {
 
 .hero {
   background-color: #231f20;
-  background-image: url(../images/hero-boy.png);
+  background-image: url(../images/hero.png);
   background-repeat: no-repeat;
   background-position: 5em;
   background-size: cover;
@@ -60,17 +60,18 @@ li {
   
   .bruise {
     -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-    animation-duration: 4s;  
+    animation-duration: 4s; 
+    position: absolute;
   }
   .bruise--1 {
     -webkit-animation-name: bruises;  
     animation-name: bruise--1;
+    top: 25em; right: 28em; height: 130px;    
   }
   .bruise--2 {
     -webkit-animation-name: bruises;
-    -webkit-animation-duration: 4s; 
     animation-name: bruise--2;
-    animation-duration: 2s;
+    top: 13em; right: 26em; height: 160px;
   }  
 
   @media (min-width: 576px) {
@@ -95,13 +96,13 @@ li {
 
 @keyframes bruise--1 {
   0%   {opacity: 0;}
-  50%  {opacity: 0;}
-  100% {opacity: 1;}
+  25%  {opacity: 0;}
+  50%  {opacity: 1;}
 }
 
 @keyframes bruise--2 {
   0%   {opacity: 0;}
-  50%  {opacity: 0;}
+  75%  {opacity: 0;}
   100% {opacity: 1;}
 }
   
