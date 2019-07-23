@@ -26,7 +26,8 @@ gulp.task('compile-sass', function() {
   return gulp.src('./css/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('./css'))         // compile sass to working folder
-    .pipe(gulp.dest('./dist/css'));  // compile sass to dist folder
+    .pipe(gulp.dest('./dist/css'))  // compile sass to dist folder
+    .pipe(minifyCSS());
 });
 
 
@@ -36,6 +37,7 @@ gulp.task('minify-css', gulp.series('compile-sass', function() {
     .pipe(concat('styles.min.css'))
     .pipe(autoprefix('last 2 versions'))
     .pipe(minifyCSS())
+    .pipe(gulp.dest('./css'))
     .pipe(gulp.dest('./dist/css'));
 }));
 
@@ -62,7 +64,7 @@ gulp.task('compress-images', function() {
 // Watch Files For Changes
 gulp.task('watch', gulp.series('compile-sass', function() {
   gulp.watch(['js/**/*.js', '!js/plugins/**/*.js'], gulp.series('lint-js', 'minify-js'));
-  gulp.watch('css/**/*.scss', gulp.series('compile-sass'));
+  gulp.watch('css/**/*.scss', gulp.series('compile-sass', 'minify-css'));
 }));
 
 

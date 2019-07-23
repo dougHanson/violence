@@ -64,6 +64,12 @@ li {
   padding: 0.3em 0;
 }
 
+.delay-animations .hero,
+.delay-animations .likes
+{
+  animation-name: none !important;  //delay animations in hero banner until all the bg images have loaded
+}
+
 .hero {
   background-color: #231f20;
   background-image: url(../images/hero-girl-1.jpg);
@@ -106,7 +112,7 @@ li {
     @media (min-width: 576px) {
       display: block;
       right: 12%;
-    }    
+    }
   }
 
   .likes--1 { animation-delay: 2s; }
@@ -183,10 +189,10 @@ li {
     animation-iteration-count: infinite;
     //cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/closedhand.cur), default !important;  // fist cursor   
     //cursor: not-allowed;
-    
+
     @media (min-width: 992px) {
       top: 7%;
-    }    
+    }
   }
 
 
@@ -239,13 +245,13 @@ li {
   }
 
   h2.reasons {
-    background: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
+    background: linear-gradient(135deg, #f35626 0%, #feab3a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   h2.dealing {
-    background: linear-gradient(92deg, #feab3a 0%, #edd448 100%);
+    background: linear-gradient(135deg, #feab3a 0%, #edd448 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1.5em;

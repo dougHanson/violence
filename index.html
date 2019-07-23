@@ -4,11 +4,12 @@
   <title>No voice to violence</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-reboot.min.css">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="css/styles.min.css">
   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
 </head>
-<body>
+<body id="preload" class="delay-animations" onLoad="loaded()">
 
   <section class="hero">
     <div class="container">
@@ -23,7 +24,7 @@
       <span class="likes__number">&#128077; 574</span>
     </div>
     <div class="likes likes--2">Fight videos liked<br>
-      <span class="likes__number">&#128077; 1.5K</span>
+      <span class="likes__number">&#128077; 1.7K</span>
     </div>
     <div class="likes likes--3">Fight videos liked<br>
       <span class="likes__number">&#128077; 11K</span>
@@ -40,7 +41,7 @@
         </div>
         <div class="col-lg-3">
           <div style="position: relative;">
-            <img src="images/mobile-fight.png" alt="Fight video on a mobile phone" class="mobile-fight" id="js-mobile-fight" />
+            <img src="images/mobile-fight.png" alt="Fight video on a mobile phone" class="mobile-fight" id="js-mobile-fight"/>
             <img src="images/logo.svg" alt="No voice to violence" class="logo" id="js-logo" />
           </div>
         </div>
@@ -162,8 +163,13 @@
       var params = "menubar=no,toolbar=no,status=no,width=570,height=570,top=" + top + ",left=" + left;
       window.open(url,"shareWindow",params);
     }
+    
+    // start the animations only once all images have loaded for a seamless UX
+    function loaded() { 
+      var preload = document.getElementById("preload");
+      preload.classList.remove("delay-animations");
+    };
   </script>
-
 
 </body>
 </html>
