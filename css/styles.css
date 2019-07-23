@@ -1,6 +1,7 @@
 body {
   font-family: 'Open sans', sans-serif;
-  font-size: calc(15px + 4 * ((100vw - 360px) / (1560))); }
+  font-size: calc(15px + 4 * ((100vw - 360px) / (1560)));
+  overflow-x: hidden; }
 
 body:after {
   overflow: hidden;
@@ -59,8 +60,7 @@ li {
   animation-timing-function: linear; }
   .hero .likes {
     position: absolute;
-    display: none;
-    right: 12%;
+    right: 9999px;
     bottom: 20px;
     opacity: 0;
     font-size: 1.25em;
@@ -80,7 +80,8 @@ li {
       padding-top: 1em; }
     @media (min-width: 576px) {
       .hero .likes {
-        display: block; } }
+        display: block;
+        right: 12%; } }
   .hero .likes--1 {
     animation-delay: 2s; }
   .hero .likes--2 {
@@ -105,10 +106,7 @@ li {
   background-image: url(../images/doodles.png);
   background-size: 50%;
   background-position: center;
-  padding: 0;
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing; }
+  padding: 0; }
   .intro p {
     line-height: 2em; }
   .intro img {
@@ -211,6 +209,8 @@ li {
       animation-duration: 1s; }
     .social img svg {
       fill: white; }
+  .social .social-link {
+    cursor: pointer; }
 
 .footer {
   margin-bottom: 0;

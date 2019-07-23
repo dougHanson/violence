@@ -67,7 +67,7 @@
         <div class="col-lg-4 col-md-6">
           <h2 class="reasons">Five reasons to not&nbsp;share&nbsp;fights</h2>
           <ul>
-            <li>It fuels more fights</li>
+            <li class="slideInLeft">It fuels more fights</li>
             <li>It encourages the bullies</li>
             <li>More kids get hurt</li>
             <li>It's against the law</li>
@@ -94,20 +94,30 @@
       <br>
       <div class="row justify-content-center">
         <div class="col-2">
-          <a href="" /><img src="images/instagram.svg" alt="Share on Instagram" /></a>
+          <a class="social-link"/>
+            <img src="images/snapchat.svg" alt="Share on Snapchat" />
+          </a>
         </div>
         <div class="col-2">
-            <a href="" /><img src="images/snapchat.svg" alt="Share on Snapchat" /></a>
+          <a class="social-link" onclick="socialWindow('https://www.facebook.com/sharer/sharer.php?u=www.education.wa.edu.au')" />
+            <img src="images/facebook.svg" alt="Share on Facebook" />
+          </a>
         </div>
         <div class="col-2">
-          <a href="" /><img src="images/facebook.svg" alt="Share on Facebook" /></a>
+          <a class="social-link" onclick="socialWindow('https://wa.me/?text=Sharing fights fuels violence. www.education.wa.edu.au')" />
+            <img src="images/whatsapp.svg" alt="Share on Whatsapp" />
+          </a>
         </div>
         <div class="col-2">
-          <a href="" /><img src="images/whatsapp.svg" alt="Share on Whatsapp" /></a>
+          <a class="social-link" onclick="socialWindow('https://twitter.com/home?status=www.education.wa.edu.au Sharing fights fuels violence.')" />
+            <img src="images/twitter.svg" alt="Share on Twitter" />
+          </a>
         </div>
         <div class="col-2">
-          <a href="" /><img src="images/twitter.svg" alt="Share on Twitter" /></a>
-        </div>
+          <a href="mailto:?subject=Sharing fights fuels violence&amp;body=Check out this site https://www.www.education.wa.edu.au" class="social-link"/>
+            <img src="images/email.svg" alt="Share via email" />
+          </a>
+        </div>  
       </div>
     </div>
   </section>
@@ -122,15 +132,28 @@
     var mobileFight = document.getElementById("js-mobile-fight");
     var logo        = document.getElementById("js-logo");
 
+    // add animations on scroll event
     window.addEventListener('scroll', function() {
       scrollPosos = window.scrollY;
       if (scrollPosos > 60) {
         mobileFight.classList.add("bounceIn");
       }
+      if (scrollPosos > 640) {
+        logo.classList.add("logo-visible");
+      }
     });
 
+    // display logo if mobile fight is clicked
     mobileFight.onclick = function(e) {
       logo.classList.add("logo-visible");
+    }
+
+    // open share functionality in popup window
+    function socialWindow(url) {
+      var left = (screen.width - 570) / 2;
+      var top = (screen.height - 570) / 2;
+      var params = "menubar=no,toolbar=no,status=no,width=570,height=570,top=" + top + ",left=" + left;
+      window.open(url,"shareWindow",params);
     }
   </script>
 

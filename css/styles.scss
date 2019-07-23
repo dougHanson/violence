@@ -7,7 +7,7 @@ $max_viewport_width: 1920;
 body {
   font-family: 'Open sans', sans-serif;
   font-size: calc(#{($min_font_size)}px + #{($max_font_size - $min_font_size)} * ((100vw - #{$min_viewport_width}px) / (#{($max_viewport_width - $min_viewport_width)})));
-  //cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/closedhand.cur), default !important;
+  overflow-x: hidden;
 }
 
 // prefetch large background images for smooth animation
@@ -16,7 +16,10 @@ body:after {
   display: block;
   height: 0;
   width: 0;
-  content: url('../images/hero-girl-1.jpg') url('../images/hero-girl-2.jpg') url('../images/hero-girl-3.jpg') url('../images/hero-girl-4.jpg')
+  content: url('../images/hero-girl-1.jpg') 
+           url('../images/hero-girl-2.jpg') 
+           url('../images/hero-girl-3.jpg') 
+           url('../images/hero-girl-4.jpg');
 }
 
 p {
@@ -78,8 +81,7 @@ li {
 
   .likes {
     position: absolute;
-    display: none; //hide on mobile
-    right: 12%;
+    right: 9999px; //hide on mobile
     bottom: 20px;
     opacity: 0;
     font-size: 1.25em; 
@@ -103,6 +105,7 @@ li {
  
     @media (min-width: 576px) {
       display: block;
+      right: 12%;
     }    
   }
 
@@ -136,9 +139,6 @@ li {
   background-size: 50%;
   background-position: center;
   padding: 0;
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;  
 
   p {
     line-height: 2em;
@@ -181,6 +181,8 @@ li {
     //animation-name: logoVisible;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
+    //cursor: url(https://ssl.gstatic.com/ui/v1/icons/mail/images/2/closedhand.cur), default !important;  // fist cursor   
+    //cursor: not-allowed;
     
     @media (min-width: 992px) {
       top: 7%;
@@ -276,6 +278,8 @@ li {
       fill: white;
     }
   }
+
+  .social-link { cursor: pointer; }
 }
 
 .footer {
@@ -418,3 +422,4 @@ li {
   50% { transform: rotate(10deg); }
   100% { transform: rotate(-10deg); }
 }
+
