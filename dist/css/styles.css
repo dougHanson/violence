@@ -90,10 +90,10 @@ li {
     animation-delay: 10s; }
   @media (min-width: 576px) {
     .hero {
-      background-position: calc(10em + 30%); } }
+      background-position: calc(12em + 20%); } }
   @media (min-width: 768px) {
     .hero {
-      background-position: calc(15em + 40%); } }
+      background-position: 16em; } }
   @media (min-width: 1200px) {
     .hero {
       background-position: 90%;
@@ -217,6 +217,12 @@ li {
   width: 100%;
   padding: 1em 0;
   text-align: center; }
+  .footer .doe-logo {
+    float: left;
+    height: 50px;
+    padding: 4px 0; }
+  .footer .disclaimer {
+    padding: 10px 12px 0; }
 
 @keyframes hero-animate {
   33% {
