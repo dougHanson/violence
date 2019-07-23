@@ -156,13 +156,14 @@ li {
   background-image: url(../images/girl-upset.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: 70%;
   background-attachment: fixed;
   color: white;
   font-family: 'Courier New';
   font-weight: bold; }
   .quotation p {
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    text-align: center; }
 
 .mask {
   width: 100%;
@@ -185,11 +186,11 @@ li {
     .cta {
       text-align: left; } }
   .cta h2.reasons {
-    background: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
+    background: linear-gradient(135deg, #f35626 0%, #feab3a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
   .cta h2.dealing {
-    background: linear-gradient(92deg, #feab3a 0%, #edd448 100%);
+    background: linear-gradient(135deg, #feab3a 0%, #edd448 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1.5em; }

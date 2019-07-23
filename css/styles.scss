@@ -108,7 +108,7 @@ li {
       font-family: 'Futura LT Condensed'; 
       padding-top: 1em;
     }
- 
+
     @media (min-width: 576px) {
       display: block;
       right: 12%;
@@ -210,7 +210,7 @@ li {
   background-image: url(../images/girl-upset.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: 70%;
   background-attachment: fixed;
   color: white;
   font-family: 'Courier New';
@@ -218,6 +218,7 @@ li {
 
   p {
     font-size: 1.5em;
+    text-align: center;
   }
 }
 
