@@ -1,3 +1,7 @@
+// import minimum Bootstrap styles
+@import "css/bootstrap-reboot.min";
+@import "css/bootstrap-grid.min";
+
 // vars to control responsive font sizes
 $mobile_font_size: 15;
 $desktop_font_size: 19;
@@ -193,7 +197,7 @@ li {
   padding: 0;
 
   p {
-    line-height: 2em;
+   // line-height: 1.6em;
   }
 
   img {

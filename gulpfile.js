@@ -12,7 +12,8 @@ const  rename = require('gulp-rename');
 const  changed = require('gulp-changed');
 const  imagemin = require('gulp-imagemin');
 const  htmlmin = require('gulp-htmlmin');
-const  replace = require('gulp-replace');
+const  replace = require('gulp-string-replace');
+const  clean = require('gulp-clean');
 
 
 // JS lint task [jsHint]
@@ -38,7 +39,6 @@ gulp.task('minify-css', gulp.series('compile-sass', function() {
     .pipe(concat('styles.min.css'))
     .pipe(autoprefix('last 2 versions'))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./css'))
     .pipe(gulp.dest('./dist/css'));
 }));
 
@@ -52,32 +52,38 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('./dist/js'));
 });
 
-// Minify HTML
-//gulp.task('minify-html', gulp.series('inject-css', function() {
-gulp.task('minify-html', function() {
-  return gulp.src('./*.html')
-  .pipe(htmlmin({ collapseWhitespace: true }))
-  .pipe(gulp.dest('./dist/'));
+
+// Make CSS path production ready (.min)
+gulp.task('replace', function() {
+  return gulp.src(["./index.html"])
+    .pipe(replace('styles.css', 'styles.min.css'))
+    .pipe(gulp.dest('./dist'))
 });
 
-// Inject CSS into html
-//gulp.task('inject-css', function() {
-//return gulp.src(...)
-//  .pipe(replace(/<link href="css\/styles.css"[^>]*>/, function(s) {
-//      var style = fs.readFileSync('css\styles.css', 'utf8');
-//      return '<style>\n' + style + '\n</style>';
-//  }))
-//  .pipe(gulp.dest('./dist'));
-//});
+
+// Minify HTML
+gulp.task('minify-html', gulp.series('replace', function() {
+//gulp.task('minify-html', function() {
+  return gulp.src('./dist/*.html')
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(gulp.dest('./dist/'));
+}));
+
+
+// Copy images and favicon
+gulp.task('copy', function () {
+  return gulp.src(['favicon.ico', 'images/**'],  {base: './'})
+    .pipe(gulp.dest('./dist'));
+});
 
 
 // Compress new images
-gulp.task('compress-images', function() {
-  return gulp.src('./images/**/*')
-    .pipe(changed('./images'))
+gulp.task('compress-images', gulp.series('copy', function() {
+  return gulp.src('./dist/images/**/*')
+    //.pipe(changed('./images'))
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/images'));
-});
+}));
 
 
 // Watch Files For Changes
@@ -87,6 +93,11 @@ gulp.task('watch', gulp.series('compile-sass', function() {
 }));
 
 
-// Default Task
+gulp.task('clean', function () {
+    return gulp.src('./dist', {read: false})
+        .pipe(clean());
+});
+
+// Default Tasks
 gulp.task('default', gulp.series('watch'));
-gulp.task('publish', gulp.series('minify-css', 'minify-js', 'compress-images', 'minify-html'));
+gulp.task('publish', gulp.series('clean', 'minify-css', 'minify-js', 'compress-images', 'minify-html'));

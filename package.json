@@ -31,9 +31,11 @@
   },
   "dependencies": {
     "fs": "0.0.1-security",
+    "gulp-clean": "^0.4.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^6.0.0",
     "gulp-replace": "^1.0.0",
+    "gulp-string-replace": "^1.1.2",
     "gulp-svg-sprite": "^1.5.0",
     "imagemin-pngquant": "^4.2.0"
   }
