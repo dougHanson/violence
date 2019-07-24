@@ -1,12 +1,12 @@
 // vars to control responsive font sizes
-$min_font_size: 15;
-$max_font_size: 19;
+$mobile_font_size: 15;
+$desktop_font_size: 19;
 $min_viewport_width: 360;
 $max_viewport_width: 1920;
 
 body {
   font-family: 'Open sans', sans-serif;
-  font-size: calc(#{($min_font_size)}px + #{($max_font_size - $min_font_size)} * ((100vw - #{$min_viewport_width}px) / (#{($max_viewport_width - $min_viewport_width)})));
+  font-size: calc(#{($mobile_font_size)}px + #{($desktop_font_size - $mobile_font_size)} * ((100vw - #{$min_viewport_width}px) / (#{($max_viewport_width - $min_viewport_width)})));
   overflow-x: hidden;
 }
 

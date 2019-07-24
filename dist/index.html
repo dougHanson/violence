@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><title>No voice to violence</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-reboot.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"><link rel="stylesheet" href="css/styles.min.css"><!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--></head><body id="preload" class="delay-animations" onload="loaded()"><section class="hero"><div class="container"><div class="row"><div class="col-sm-12"><h1>What if<br>this was<br>your<br>friend?</h1></div><img src="images/hero-girl-4.jpg" class="hero-girl hero-girl--4"> <img src="images/hero-girl-3.jpg" class="hero-girl hero-girl--3"> <img src="images/hero-girl-2.jpg" class="hero-girl hero-girl--2"> <img src="images/hero-girl-1.jpg" class="hero-girl hero-girl--1"></div></div><div class="likes likes--1">Fight videos liked<br><span class="likes__number">&#128077; 574</span></div><div class="likes likes--2">Fight videos liked<br><span class="likes__number">&#128077; 1.7K</span></div><div class="likes likes--3">Fight videos liked<br><span class="likes__number">&#128077; 11K</span></div></section><section class="intro"><div class="container"><div class="row"><div class="col-lg-9"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel magna fan boy facilisis.</p><p>When you see a video like this one, <strong>simply scroll past it.</strong></p></div><div class="col-lg-3"><div style="position: relative;"><img src="images/mobile-fight.png" alt="Fight video on a mobile phone" class="mobile-fight" id="js-mobile-fight"> <img src="images/logo.svg" alt="No voice to violence" class="logo" id="js-logo"></div></div></div></div></section><section class="quotation"><div class="mask"><div class="container"><div class="row"><div class="col-sm-12"><p>Five thousand people 'liked' a video of my friend getting beaten&nbsp;up&nbsp;at&nbsp;school.</p><p>I never realised that liking fights made&nbsp;things&nbsp;worse.</p></div></div></div></div></section><section class="cta"><div class="container"><div class="row justify-content-around"><div class="col-lg-4 col-md-6"><h2 class="reasons">Five reasons to not&nbsp;share&nbsp;fights</h2><ul><li class="slideInLeft">It fuels more fights</li><li>It encourages the bullies</li><li>More kids get hurt</li><li>It's against the law</li><li>You want school to be safe</li></ul></div><div class="col-lg-4 col-md-6"><h2 class="dealing">How should I&nbsp;deal with fight&nbsp;videos?</h2><ul><li>Scroll past them</li><li>Don't share them with friends</li><li>Report them as inappropriate</li><li>Tell friends sharing is illegal</li><li>Suggest other videos to share</li></ul></div></div></div></section><section class="social"><div class="container"><h2>Share the message</h2><br><div class="row justify-content-center"><div class="col-2"><a class="social-link"><img src="images/snapchat.svg" alt="Share on Snapchat"></a></div><div class="col-2"><a class="social-link" onclick="socialWindow('https://www.facebook.com/sharer/sharer.php?u=www.education.wa.edu.au')"><img src="images/facebook.svg" alt="Share on Facebook"></a></div><div class="col-2"><a class="social-link" onclick="socialWindow('https://wa.me/?text=Sharing fights fuels violence. www.education.wa.edu.au')"><img src="images/whatsapp.svg" alt="Share on Whatsapp"></a></div><div class="col-2"><a class="social-link" onclick="socialWindow('https://twitter.com/home?status=www.education.wa.edu.au Sharing fights fuels violence.')"><img src="images/twitter.svg" alt="Share on Twitter"></a></div><div class="col-2"><a href="mailto:?subject=Sharing fights fuels violence&amp;body=Check out this site https://www.www.education.wa.edu.au" class="social-link"><img src="images/email.svg" alt="Share via email"></a></div></div></div></section><section class="footer"><div class="container"><div class="row justify-content-center"><img src="images/doe-logo.svg" class="doe-logo"> <small class="disclaimer">All contents copyright Government of Western Australia, unless otherwise&nbsp;stated.</small></div></div></section><script>var scrollPos = window.scrollY;
+    var mobileFight = document.getElementById("js-mobile-fight");
+    var logo = document.getElementById("js-logo");
+
+    // add animations on scroll event
+    window.addEventListener('scroll', function() {
+      scrollPosos = window.scrollY;
+      if (scrollPosos > 60) {
+        mobileFight.classList.add("bounceIn");
+      }
+      if (scrollPosos > 640) {
+        logo.classList.add("logo-visible");
+      }
+    });
+
+    // display logo if mobile fight is clicked
+    mobileFight.onclick = function(e) {
+      logo.classList.add("logo-visible");
+    }
+
+    // open share functionality in popup window
+    function socialWindow(url) {
+      var left = (screen.width - 570) / 2;
+      var top = (screen.height - 570) / 2;
+      var params = "menubar=no,toolbar=no,status=no,width=570,height=570,top=" + top + ",left=" + left;
+      window.open(url, "shareWindow", params);
+    }
+
+    // start the animations only once all images have loaded for a seamless UX
+    function loaded() {
+      var preload = document.getElementById("preload");
+      preload.classList.remove("delay-animations");
+    };</script></body></html>

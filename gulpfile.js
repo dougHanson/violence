@@ -11,6 +11,8 @@ const  uglify = require('gulp-uglify');
 const  rename = require('gulp-rename');
 const  changed = require('gulp-changed');
 const  imagemin = require('gulp-imagemin');
+const  htmlmin = require('gulp-htmlmin');
+const  replace = require('gulp-replace');
 
 
 // JS lint task [jsHint]
@@ -50,11 +52,29 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('./dist/js'));
 });
 
+// Minify HTML
+//gulp.task('minify-html', gulp.series('inject-css', function() {
+gulp.task('minify-html', function() {
+  return gulp.src('./*.html')
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(gulp.dest('./dist/'));
+});
+
+// Inject CSS into html
+//gulp.task('inject-css', function() {
+//return gulp.src(...)
+//  .pipe(replace(/<link href="css\/styles.css"[^>]*>/, function(s) {
+//      var style = fs.readFileSync('css\styles.css', 'utf8');
+//      return '<style>\n' + style + '\n</style>';
+//  }))
+//  .pipe(gulp.dest('./dist'));
+//});
+
 
 // Compress new images
 gulp.task('compress-images', function() {
   return gulp.src('./images/**/*')
-    .pipe(changed('./imgages'))
+    .pipe(changed('./images'))
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/images'));
 });
@@ -69,4 +89,4 @@ gulp.task('watch', gulp.series('compile-sass', function() {
 
 // Default Task
 gulp.task('default', gulp.series('watch'));
-gulp.task('publish', gulp.series('minify-css', 'minify-js', 'compress-images'));
+gulp.task('publish', gulp.series('minify-css', 'minify-js', 'compress-images', 'minify-html'));
