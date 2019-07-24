@@ -1,16 +1,16 @@
 // Include gulp
-var gulp = require('gulp'); 
+const  gulp = require('gulp'); 
 
 // Include plugins
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var autoprefix = require('gulp-autoprefixer');
-var minifyCSS = require('gulp-minify-css');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var changed = require('gulp-changed');
-var imagemin = require('gulp-imagemin');
+const  jshint = require('gulp-jshint');
+const  sass = require('gulp-sass');
+const  autoprefix = require('gulp-autoprefixer');
+const  minifyCSS = require('gulp-minify-css');
+const  concat = require('gulp-concat');
+const  uglify = require('gulp-uglify');
+const  rename = require('gulp-rename');
+const  changed = require('gulp-changed');
+const  imagemin = require('gulp-imagemin');
 
 
 // JS lint task [jsHint]
@@ -32,10 +32,11 @@ gulp.task('compile-sass', function() {
 
 // Minify CSS (concatenate, auto-prefix and minify)
 gulp.task('minify-css', gulp.series('compile-sass', function() {
-  gulp.src(['./dist/css/**/*.css'])
+  return gulp.src(['./dist/css/**/*.css'])
     .pipe(concat('styles.min.css'))
     .pipe(autoprefix('last 2 versions'))
     .pipe(minifyCSS())
+    .pipe(gulp.dest('./css'))
     .pipe(gulp.dest('./dist/css'));
 }));
 
@@ -48,21 +49,21 @@ gulp.task('minify-js', function() {
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js'));
 });
- 
+
 
 // Compress new images
 gulp.task('compress-images', function() {
-  gulp.src('./img/**/*')
-    .pipe(changed('./img'))
+  return gulp.src('./images/**/*')
+    .pipe(changed('./imgages'))
     .pipe(imagemin())
-    .pipe(gulp.dest('./dist/img'));
+    .pipe(gulp.dest('./dist/images'));
 });
 
 
 // Watch Files For Changes
 gulp.task('watch', gulp.series('compile-sass', function() {
   gulp.watch(['js/**/*.js', '!js/plugins/**/*.js'], gulp.series('lint-js', 'minify-js'));
-  gulp.watch('css/**/*.scss', gulp.series('compile-sass'));
+  gulp.watch('css/**/*.scss', gulp.series('minify-css'));
 }));
 
 
