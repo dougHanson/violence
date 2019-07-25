@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! Bootstrap Reboot v4.3.1 (https://getbootstrap.com/) */
 *, ::after, ::before {
   box-sizing: border-box; }
@@ -2671,7 +2672,7 @@ html {
 
 /*# sourceMappingURL=bootstrap-grid.min.css.map */
 body {
-  font-family: 'Open sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: calc(15px + 4 * ((100vw - 360px) / (1560)));
   overflow-x: hidden; }
 
@@ -2683,16 +2684,27 @@ body:after {
   content: url("../images/hero-girl-1.jpg") url("../images/hero-girl-2.jpg") url("../images/hero-girl-3.jpg") url("../images/hero-girl-4.jpg"); }
 
 p {
-  margin: 2em 0;
-  line-height: 1.5em; }
+  margin: .25em 0 1.25em;
+  line-height: 1.67em; }
+
+a {
+  color: white;
+  border-bottom: 1px solid white; }
+  a:hover {
+    color: white;
+    text-decoration: none;
+    transition: all 200ms;
+    font-style: italic; }
+
+h1, h2, h3 {
+  font-weight: bold;
+  font-family: 'Futura LT Condensed', serif;
+  text-transform: uppercase; }
 
 h1 {
-  font-family: 'Futura LT Condensed';
-  text-transform: uppercase;
   font-size: 3.5em;
   line-height: 1em;
   padding: 2em 0;
-  font-weight: bold;
   color: white; }
   @media (min-width: 576px) {
     h1 {
@@ -2704,9 +2716,12 @@ h1 {
 
 h2 {
   font-size: 2.2em;
-  font-weight: bold;
-  font-family: 'Futura LT Condensed', serif;
-  text-transform: uppercase; }
+  line-height: 1.1em; }
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  margin-top: 1.5em; }
 
 img {
   height: auto;
@@ -2827,7 +2842,7 @@ li {
   background-image: url(../images/doodles.png);
   background-size: 50%;
   background-position: center;
-  padding: 0; }
+  padding: 2em 0; }
   .intro img {
     display: block;
     margin: 0 auto 2em;
@@ -2859,12 +2874,6 @@ li {
     @media (min-width: 992px) {
       .intro .logo-visible {
         top: 7%; } }
-  @media (min-width: 768px) {
-    .intro {
-      padding: 2em 0; } }
-  @media (min-width: 1200px) {
-    .intro {
-      padding: 3em 0; } }
 
 .quotation {
   background: #252525;
@@ -2872,19 +2881,59 @@ li {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 70%;
-  background-attachment: fixed;
-  color: white;
-  font-family: 'Courier New';
-  font-weight: bold; }
+  background-attachment: fixed; }
   .quotation p {
-    font-size: 1.5em;
-    text-align: center; }
+    font-family: 'Calligraffitti', cursive;
+    font-size: 1.75em;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px; }
+  .quotation .divider-top:before, .quotation .divider-top:after {
+    content: '';
+    position: absolute; }
+  .quotation .divider-top:before {
+    border-top: 4px solid white;
+    left: 10%;
+    top: -3.5em;
+    width: 80%; }
+    @media (min-width: 992px) {
+      .quotation .divider-top:before {
+        left: 0;
+        width: 40%; } }
+  @media (min-width: 992px) {
+    .quotation .divider-top:after {
+      border-bottom: 4px solid white;
+      left: 60%;
+      top: -3.5em;
+      width: 40%; } }
+  .quotation .divider-bottom:before, .quotation .divider-bottom:after {
+    content: '';
+    position: absolute;
+    left: 0; }
+  .quotation .divider-bottom:before {
+    border-bottom: 4px solid white;
+    bottom: -1.5em;
+    left: 10%;
+    width: 80%; }
+    @media (min-width: 992px) {
+      .quotation .divider-bottom:before {
+        left: 0;
+        width: 100%; } }
+  @media (min-width: 992px) {
+    .quotation .divider-bottom:after {
+      content: '\“';
+      color: white;
+      font-family: 'Calligraffitti', cursive;
+      font-size: 21em;
+      position: absolute;
+      top: -0.5em;
+      left: 42%; } }
 
 .mask {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 4em 0; }
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12em 0 9em; }
 
 .cta {
   background: #252525;
@@ -2913,23 +2962,30 @@ li {
       .cta h2.dealing {
         margin-top: 0; } }
 
-.social {
+.contact {
   padding: 4em 0;
   width: 100%;
   background-color: #00a296;
   color: white;
   text-align: center; }
-  .social img {
+  .contact h2 {
+    margin-bottom: .5em; }
+  .contact h3 {
+    margin-bottom: 1em; }
+  .contact p {
+    line-height: 2em;
+    margin-bottom: 1em; }
+  .contact img {
     display: block;
-    width: 100%;
-    max-width: 4em;
-    min-width: 3em; }
-    .social img:hover {
+    float: left;
+    width: 30px;
+    margin-right: 10px; }
+    .contact img:hover {
       animation-name: tada;
       animation-duration: 1s; }
-    .social img svg {
+    .contact img svg {
       fill: white; }
-  .social .social-link {
+  .contact .social-link {
     cursor: pointer; }
 
 .footer {

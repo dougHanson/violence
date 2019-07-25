@@ -9,7 +9,7 @@ $min_viewport_width: 360;
 $max_viewport_width: 1920;
 
 body {
-  font-family: 'Open sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: calc(#{($mobile_font_size)}px + #{($desktop_font_size - $mobile_font_size)} * ((100vw - #{$min_viewport_width}px) / (#{($max_viewport_width - $min_viewport_width)})));
   overflow-x: hidden;
 }
@@ -27,17 +27,32 @@ body:after {
 }
 
 p {
-  margin: 2em 0;
-  line-height: 1.5em;
+  margin: .25em 0 1.25em;
+  line-height: 1.67em;
+}
+
+a { 
+  color: white;
+  border-bottom: 1px solid white;
+  
+  &:hover { 
+    color: white;
+    text-decoration: none;
+    transition: all 200ms;
+    font-style: italic;
+  }
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  font-family: 'Futura LT Condensed', serif;
+  text-transform: uppercase;
 }
 
 h1 {
-  font-family: 'Futura LT Condensed';
-  text-transform: uppercase;
   font-size: 3.5em;
   line-height: 1em;
   padding: 2em 0;
-  font-weight: bold;
   color: white;
 
   @media (min-width: 576px) {
@@ -52,9 +67,13 @@ h1 {
 
 h2 {
   font-size: 2.2em;
-  font-weight: bold;
-  font-family: 'Futura LT Condensed', serif;
-  text-transform: uppercase;
+  line-height: 1.1em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  margin-top: 1.5em;
 }
 
 img {
@@ -194,11 +213,7 @@ li {
   background-image: url(../images/doodles.png);
   background-size: 50%;
   background-position: center;
-  padding: 0;
-
-  p {
-   // line-height: 1.6em;
-  }
+  padding: 2em 0;
 
   img {
     display: block;
@@ -244,14 +259,6 @@ li {
       top: 7%;
     }
   }
-
-  @media (min-width: 768px) {
-    padding: 2em 0;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 3em 0;
-  }
 }
 
 .quotation {
@@ -261,21 +268,82 @@ li {
   background-repeat: no-repeat;
   background-position: 70%;
   background-attachment: fixed;
-  color: white;
-  font-family: 'Courier New';
-  font-weight: bold;
 
   p {
-    font-size: 1.5em;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 1.75em;
     text-align: center;
+    color: white;
+    letter-spacing: 2px;
+  }
+
+  .divider-top {
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+    }
+
+    &:before {
+      border-top: 4px solid white;
+      left: 10%;
+      top: -3.5em;
+      width: 80%;
+
+      @media (min-width: 992px) {
+        left: 0;
+        width: 40%;
+      }
+    }
+
+    &:after {
+      @media (min-width: 992px) {
+        border-bottom: 4px solid white;
+        left: 60%;
+        top: -3.5em;
+        width: 40%;
+      }
+    }
+  }
+
+ .divider-bottom {
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+
+    &:before {
+      border-bottom: 4px solid white;      
+      bottom: -1.5em;
+      left: 10%;
+      width: 80%;
+      @media (min-width: 992px) {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+    &:after {
+      @media (min-width: 992px) {
+        content: '\“';
+        color: white;
+        font-family: 'Calligraffitti', cursive;
+        font-size: 21em;
+        position: absolute;
+        top: -0.5em;
+        left: 42%;
+      }
+    }
   }
 }
 
 .mask {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 4em 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12em 0 9em;
 }
 
 .cta {
@@ -312,18 +380,26 @@ li {
   }
 }
 
-.social {
+.contact {
   padding: 4em 0;
   width: 100%;
   background-color: #00a296;
   color: white;
   text-align: center;
+  
+  h2 { margin-bottom: .5em; }
+  h3 { margin-bottom: 1em; }
+  
+  p { 
+    line-height: 2em;
+    margin-bottom: 1em;
+  }
 
   img {
     display: block;
-    width: 100%;
-    max-width: 4em;
-    min-width: 3em;
+    float: left;
+    width: 30px;
+    margin-right: 10px;
 
     &:hover {
       animation-name: tada;
