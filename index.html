@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="favicon.ico" type="image/ico">
 
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body id="preload" class="delay-animations" onLoad="loaded()">
@@ -50,7 +50,7 @@
           <p>Sharing fight videos makes it worse for those hurt. More people see what happened to them, including friends and family, which can be&nbsp;embarrassing.</p>
           <p>It is a permanent reminder of what happened and they are linked to the fight forever. Having it shared can make it even harder to get over the&nbsp;incident.</p>
           <p>Some people find it difficult to go to school or concentrate when they are at school. Some lose interest in socialising with their friends and having fun. Some are scared they will be hurt&nbsp;again.</p>
-          <p>Sharing or liking fight videos rewards those filming by giving them an audience and helping it grow and encourages those starting fights to do it again. If you see one, <strong>just scroll past&nbsp;it!</strong></p>
+          <p>Sharing or liking fight videos rewards those filming by giving them an audience and helping it grow and encourages those starting fights to do it again.</p>
         </div>
         <div class="col-lg-3">
           <div style="position: relative;">
@@ -108,24 +108,24 @@
     <div class="container">
       <div class="row justify-content-around">
         <div class="col-sm-10">
-          <h2>Need someone to talk to?</h2>
-          <p>If you find this topic upsetting or worrying and need someone to talk to, you can contact<br>a number of confidential and supportive services.</p>
+          <h2>Need someone to talk&nbsp;to?</h2>
+          <p>If you find this topic upsetting or worrying and need someone to talk to, you can contact a number of confidential and supportive&nbsp;services.</p>
           <hr style="color: white;"/>
         </div>
       </div>
-      <div class="row justify-content-around">
+      <div class="row justify-content-around contact__details">
         <div class="col-md-2"></div>
-        <div class="col-md-3" style="text-align: left;">
+        <div class="col-md-3">
           <h3>Kids Helpline</h3>
           <p><img src="images/mobile.svg" />1800 55 1800</p>
-          <p><a href="//kidshelpline.com.au" target="_blank"><img src="images/web-inverse.svg" />kidshelpline.com.au</a></p>          
+          <p><img src="images/web-inverse.svg" /><a href="//kidshelpline.com.au" target="_blank">kidshelpline.com.au</a></p>          
         </div>
-        <div class="col-md-3" style="text-align: left;">
+        <div class="col-md-3">
           <h3>Headspace</h3>
           <p><img src="images/mobile.svg" />1800 650 890</p>
-          <p><a href="//headspace.org.au" target="_blank"><img src="images/web-inverse.svg" />headspace.org.au</a></p>
+          <p><img src="images/web-inverse.svg" /><a href="//headspace.org.au" target="_blank">headspace.org.au</a></p>
         </div>    
-          <div class="col-md-1"></div>
+          <div class="col-md-2"></div>
       </div>      
 
 <!--
@@ -159,17 +159,41 @@
 -->
     </div>
   </section>
+  
+  <section class="more-info">
+    <div class="container more-info__content">
+      <div class="row justify-content-center">
+      
+        <div class="col-9">
+          <div class="container">
+            <h3>More information for parents</h3>
+            <div id="js-hidden-content" class="hidden-content" style="display: none;">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              <form>
+                <input type="text" placeholder="Your name" />
+                <input type="text" placeholder="Email address" />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <h3><img src="images/cross.svg" class="cross" id="js-show-more"/></h3>
+        </div>        
+      </div>
+    </div>  
+  </section>
 
-  <section class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="row justify-content-center">
-        <img src="images/doe-logo.svg" class="doe-logo" />
+        <img src="images/doe-logo-inverse.svg" class="doe-logo" />
         <small class="disclaimer">
           All contents copyright Government of Western Australia, unless otherwise&nbsp;stated.
         </small>
       </div>
     </div>
-  </section>
+  </footer>
 
 
   <script>
@@ -206,6 +230,31 @@
       var preload = document.getElementById("preload");
       preload.classList.remove("delay-animations");
     };
+
+    // toggle more information accordion
+//    var showMore = document.getElementById("js-show-more");
+//    var hiddenContent = document.getElementById("js-hidden-content");
+//    showMore.onclick = function () {
+//      if (hiddenContent.classList.contains('d-block')) {
+//        hiddenContent.classList.remove("d-block");
+//        showMore.classList.remove("cross");
+//      }
+//      else {
+//        hiddenContent.classList.add("d-block");
+//        showMore.classList.add("cross");
+//      }
+//    }
+    
+    $('h3').click( function() {
+      $('#js-hidden-content').slideToggle(500)
+      $('#js-show-more').toggleClass('cross');
+      $("html, body").animate({ scrollTop: $(document).height() }, 500);
+    });
+    
+    
+
+    
+    
   </script>
 
 </body>
