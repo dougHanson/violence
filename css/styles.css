@@ -3018,7 +3018,8 @@ li {
     background: #231f20;
     color: white;
     border: none;
-    padding: 1em 2em; }
+    padding: 1em 2em;
+    width: 100%; }
   .more-info__content {
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
