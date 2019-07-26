@@ -424,43 +424,56 @@ li {
   }
 
   .social-link { cursor: pointer; }
-  
+
   &__details {
     text-align: center;
 
     @media (min-width: 768px) {
       text-align: left;
-    } 
-    
+    }
   }
 }
-
 
 .more-info { 
   padding: 3em 0;
   transition: all 1s;
-  
+
   h3 { cursor: pointer; }
   
+  input,
+  textarea {
+    width: 100%;
+    float: left;
+    height: 3em;
+    margin: 0.5em 0.25em;
+    padding-left: 1em;
+  }
+  
+  textarea {
+    height: 10em;
+    padding-top: 1em;
+  }
+  
+  button {
+    background: $brand-primary;
+    color: white;
+    border: none;
+    padding: 1em 2em;    
+  }
+
   &__content {
     border-top: 1px solid #333; 
     border-bottom: 1px solid #333; 
     padding-bottom: 2em;
   }
-  
+
   .cross {
     transform-origin: 0.6em;
     transition: all 0.2;
-    animation-name: rotate;
     animation-duration: 1s;
-    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    animation-name: rotateCross;    
   }
-}
-
-
-@keyframes rotate {
-  0% { transform: rotate(0) };
-  100% { transform: rotate(45deg) };
 }
 
 
@@ -495,11 +508,17 @@ footer {
   100% { background-image: url(../images/hero-girl-4.jpg) };
 }
 
-
 @keyframes hero-girl {
   0%{ opacity: 1; };
   50% { opacity: 0.5; }
   100% { opacity: 0; };
+}
+
+
+// ROTATE + TO x ON CLICK
+@keyframes rotateCross {
+  0% { transform: rotate(0) };
+  100% { transform: rotate(45deg) };
 }
 
 // HERO BANNER LIKES FLOATING UPWARD

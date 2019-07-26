@@ -3004,6 +3004,21 @@ li {
   transition: all 1s; }
   .more-info h3 {
     cursor: pointer; }
+  .more-info input,
+  .more-info textarea {
+    width: 100%;
+    float: left;
+    height: 3em;
+    margin: 0.5em 0.25em;
+    padding-left: 1em; }
+  .more-info textarea {
+    height: 10em;
+    padding-top: 1em; }
+  .more-info button {
+    background: #231f20;
+    color: white;
+    border: none;
+    padding: 1em 2em; }
   .more-info__content {
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
@@ -3011,15 +3026,9 @@ li {
   .more-info .cross {
     transform-origin: 0.6em;
     transition: all 0.2;
-    animation-name: rotate;
     animation-duration: 1s;
-    animation-direction: reverse; }
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(45deg); } }
+    animation-fill-mode: forwards;
+    animation-name: rotateCross; }
 
 footer {
   margin-bottom: 0;
@@ -3050,6 +3059,12 @@ footer {
     opacity: 0.5; }
   100% {
     opacity: 0; } }
+
+@keyframes rotateCross {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(45deg); } }
 
 @keyframes likes {
   0% {
