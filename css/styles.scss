@@ -58,12 +58,12 @@ a {
   color: white;
   border-bottom: 1px solid white;
   transition: all 200ms;
-  
+
   &:hover { 
     color: white;
     text-decoration: none;
     transition: all 200ms;
-    font-style: italic;
+    //font-style: italic;
     padding-bottom: 3px;
   }
 }
@@ -491,6 +491,8 @@ li {
     border-top: 1px solid #333; 
     border-bottom: 1px solid #333; 
     padding-bottom: 2em;
+    
+    img { width: 0.825em; max-width: 1em; }
   }
 
   .cross {
@@ -500,6 +502,64 @@ li {
     animation-fill-mode: forwards;
     animation-name: rotateCross;    
   }
+}
+
+
+
+/* Social Icons */
+.social__sidelinks {
+  position: fixed;
+  top: 60vh;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 99;
+}
+
+.social__sidelinks li {
+  display: flex;
+  padding: 0;
+
+  a {
+    display: inline-block;
+    border-bottom: none;
+
+    &.facebook { background-color: #3c5a96; }
+    &.twitter { background-color: #1dadeb; }
+    &.whatsapp { background-color: #24cc63; }
+    &.email { background-color: $brand-primary; }    
+    
+    & .social__name { display: none; cursor: pointer; color: white; }
+
+    &:hover {
+      padding: 0 0 0 2em;
+      
+      .social__name { 
+        display: block !important; 
+        float: left; 
+        font-family: 'Futura LT Condensed', sans-serif; 
+        text-transform: uppercase; 
+        padding-top: .45em; 
+        padding-right: 1em;
+      }
+    }    
+  }
+}
+
+.social__sidelinks li a img {
+  display: block;
+  max-width: 40px;
+  padding: 10px;
+  -webkit-transition: background .2s ease-in-out;
+  -moz-transition: background .2s ease-in-out;
+  -o-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
+}
+
+.social__sidelinks li a:hover img {
+  background: rgba(0, 0, 0, .2);
+  transition: none;
 }
 
 
