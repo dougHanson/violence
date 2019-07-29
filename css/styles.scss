@@ -14,8 +14,6 @@ src:url("https://use.typekit.net/af/64e0cf/00000000000000000001203d/27/l?primer=
 font-display:auto;font-style:normal;font-weight:700;
 }
 
-.tk-futura-pt-condensed { font-family: "futura-pt-condensed",sans-serif; }
-
 
 // import minimum Bootstrap styles
 @import "css/bootstrap-reboot.min";
@@ -35,6 +33,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: calc(#{($mobile_font_size)}px + #{($desktop_font_size - $mobile_font_size)} * ((100vw - #{$min_viewport_width}px) / (#{($max_viewport_width - $min_viewport_width)})));
   overflow-x: hidden;
+    transition: all 500ms;
 }
 
 // prefetch large background images for smooth animation
@@ -70,7 +69,7 @@ a {
 }
 
 h1, h2, h3 {
-  @extend .tk-futura-pt-condensed;   // font-family: 'Futura LT Condensed', serif;
+  font-family: "futura-pt-condensed",sans-serif;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -455,7 +454,6 @@ li {
 
 .more-info { 
   padding: 3em 0;
-  transition: all 1s;
 
   h3 { cursor: pointer; }
   
@@ -464,21 +462,29 @@ li {
     width: 100%;
     float: left;
     height: 3em;
-    margin: 0.5em 0.25em;
+    margin: 0.5em 0em;
     padding-left: 1em;
   }
   
   textarea {
     height: 10em;
     padding-top: 1em;
+    margin-bottom: 1em;
   }
   
   button {
     background: $brand-primary;
     color: white;
-    border: none;
+    border: 2px solid $brand-primary;
     padding: 1em 2em;  
     width: 100%;
+    transition: all 250ms;
+    
+    &:hover {
+      background: white;
+      color: $brand-primary;
+    }
+    
   }
 
   &__content {

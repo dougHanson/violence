@@ -15,9 +15,6 @@
   font-style: normal;
   font-weight: 700; }
 
-.tk-futura-pt-condensed, h1, h2, h3 {
-  font-family: "futura-pt-condensed",sans-serif; }
-
 /*! Bootstrap Reboot v4.3.1 (https://getbootstrap.com/) */
 *, ::after, ::before {
   box-sizing: border-box; }
@@ -2693,7 +2690,8 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: calc(15px + 4 * ((100vw - 360px) / (1560)));
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  transition: all 500ms; }
 
 body:after {
   color: #231f20;
@@ -2719,6 +2717,7 @@ a {
     padding-bottom: 3px; }
 
 h1, h2, h3 {
+  font-family: "futura-pt-condensed",sans-serif;
   font-weight: bold;
   text-transform: uppercase; }
 
@@ -3018,8 +3017,7 @@ li {
         text-align: left; } }
 
 .more-info {
-  padding: 3em 0;
-  transition: all 1s; }
+  padding: 3em 0; }
   .more-info h3 {
     cursor: pointer; }
   .more-info input,
@@ -3027,17 +3025,22 @@ li {
     width: 100%;
     float: left;
     height: 3em;
-    margin: 0.5em 0.25em;
+    margin: 0.5em 0em;
     padding-left: 1em; }
   .more-info textarea {
     height: 10em;
-    padding-top: 1em; }
+    padding-top: 1em;
+    margin-bottom: 1em; }
   .more-info button {
     background: #231f20;
     color: white;
-    border: none;
+    border: 2px solid #231f20;
     padding: 1em 2em;
-    width: 100%; }
+    width: 100%;
+    transition: all 250ms; }
+    .more-info button:hover {
+      background: white;
+      color: #231f20; }
   .more-info__content {
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
