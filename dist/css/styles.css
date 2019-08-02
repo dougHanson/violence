@@ -2896,11 +2896,12 @@ li {
 
 .quotation {
   background: #231f20;
-  background-image: url(../images/anxiety-girl.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 70%;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden; }
   .quotation p {
     font-family: 'Calligraffitti', cursive;
     font-size: 1.75em;
@@ -3059,6 +3060,13 @@ footer {
   text-align: center;
   background: #231f20;
   color: white; }
+  footer a {
+    border-bottom: none;
+    margin: 0 0.5em;
+    cursor: pointer; }
+    footer a:hover {
+      position: relative;
+      top: -2px; }
   footer .doe-logo {
     float: left;
     height: 50px;

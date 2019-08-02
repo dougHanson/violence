@@ -288,11 +288,15 @@ li {
 
 .quotation {
   background: $brand-primary;
-  background-image: url(../images/anxiety-girl.png);
+  //background-image: url(../images/anxiety-girl.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 70%;
   background-attachment: fixed;
+  
+  //for carousel bg
+  position: relative;
+  overflow: hidden;
 
   p {
     font-family: 'Calligraffitti', cursive;
@@ -509,6 +513,17 @@ footer {
   text-align: center;
   background: $brand-primary;
   color: white;
+  
+  a {
+    border-bottom: none;
+    margin: 0 0.5em;
+    cursor: pointer;
+    
+    &:hover {
+      position: relative;
+      top: -2px;
+    }
+  }
 
   .doe-logo {
     float: left; 
