@@ -2811,7 +2811,7 @@ li {
       background-position: 75%; } }
 
 .hero {
-  height: 25em;
+  height: 28em;
   position: relative; }
   .hero h1 {
     padding: 1.5em 0;
@@ -2886,9 +2886,7 @@ li {
     top: 14%;
     right: -50%;
     opacity: 1;
-    -webkit-animation-duration: 10s;
     animation-duration: 10s;
-    -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite; }
     @media (min-width: 992px) {
       .intro .logo-visible {
@@ -2900,6 +2898,7 @@ li {
   background-repeat: no-repeat;
   background-position: 70%;
   background-attachment: fixed;
+  height: 26em;
   position: relative;
   overflow: hidden; }
   .quotation p {
@@ -2908,6 +2907,123 @@ li {
     text-align: center;
     color: white;
     letter-spacing: 2px; }
+  .quotation .slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; }
+    .quotation .slideshow li span {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: none;
+      opacity: 0;
+      z-index: 0;
+      animation: imageAnimation 48s linear infinite 0s;
+      filter: grayscale(100%); }
+    .quotation .slideshow li div {
+      z-index: 1000;
+      position: absolute;
+      top: 0;
+      bottom: 30px;
+      left: 0px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      animation: titleAnimation 48s linear infinite 0s;
+      display: table;
+      height: 100%; }
+      .quotation .slideshow li div p {
+        font-family: 'Calligraffitti', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.5em;
+        padding: 0 2em;
+        color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        text-shadow: 0px 3px 2px #000; }
+        @media (min-width: 560px) {
+          .quotation .slideshow li div p {
+            font-size: 2em; } }
+        @media (min-width: 992px) {
+          .quotation .slideshow li div p {
+            font-size: 2.5em; } }
+  .quotation .slideshow:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    content: '';
+    background: rgba(0, 0, 0, 0.6); }
+  .quotation .slideshow li:nth-child(1) span {
+    background-image: url(../images/1.jpg);
+    background-position: 50% 30%; }
+  .quotation .slideshow li:nth-child(2) span {
+    background-image: url(../images/2.jpg);
+    animation-delay: 8s; }
+  .quotation .slideshow li:nth-child(3) span {
+    background-image: url(../images/3.jpg);
+    animation-delay: 16s; }
+  .quotation .slideshow li:nth-child(4) span {
+    background-image: url(../images/anxiety-girl.png);
+    animation-delay: 24s; }
+  .quotation .slideshow li:nth-child(5) span {
+    background-image: url(../images/5.jpg);
+    animation-delay: 32s; }
+  .quotation .slideshow li:nth-child(6) span {
+    background-image: url(../images/6.jpg);
+    animation-delay: 40s; }
+  .quotation .slideshow li:nth-child(2) div {
+    animation-delay: 8s; }
+  .quotation .slideshow li:nth-child(3) div {
+    animation-delay: 16s; }
+  .quotation .slideshow li:nth-child(4) div {
+    animation-delay: 24s; }
+  .quotation .slideshow li:nth-child(5) div {
+    animation-delay: 32s; }
+  .quotation .slideshow li:nth-child(6) div {
+    animation-delay: 40s; }
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in; }
+  8% {
+    opacity: 1;
+    transform: scale(1.05);
+    animation-timing-function: ease-out; }
+  17% {
+    opacity: 1;
+    transform: scale(1.1); }
+  22% {
+    opacity: 0;
+    transform: scale(1.1) translateY(-10%); }
+  25% {
+    opacity: 0;
+    -transform: scale(1.1) translateY(-40%); }
+  100% {
+    opacity: 0; } }
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0; }
+  8% {
+    opacity: 1; }
+  19% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
   .quotation .divider-top:before, .quotation .divider-top:after {
     content: '';
     position: absolute; }

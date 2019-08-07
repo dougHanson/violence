@@ -29,13 +29,13 @@
     </div>
 
     <div class="likes likes--1">Fight videos liked<br>
-      <span class="likes__number">&#128077; 574</span>
+      <span class="likes__number">574</span>  <!-- &#128077; -->
     </div>
     <div class="likes likes--2">Fight videos liked<br>
-      <span class="likes__number">&#128077; 1.7K</span>
+      <span class="likes__number">1.7K</span>
     </div>
     <div class="likes likes--3">Fight videos liked<br>
-      <span class="likes__number">&#128077; 11K</span>
+      <span class="likes__number">11K</span>
     </div>
   </section>
 
@@ -46,10 +46,22 @@
           <h3>No Voice to Violence</h3>
           <p>None of us like to see someone getting hurt. And noone wants to add to their pain. Unfortunately, when fights are uploaded and shared online, it makes things worse and fuels more&nbsp;violence.</p>
           <h3>How does sharing and liking make it worse?</h3>
+<!--
           <p>Sharing fight videos makes it worse for those hurt. More people see what happened to them, including friends and family, which can be&nbsp;embarrassing.</p>
           <p>It is a permanent reminder of what happened and they are linked to the fight forever. Having it shared can make it even harder to get over the&nbsp;incident.</p>
           <p>Some people find it difficult to go to school or concentrate when they are at school. Some lose interest in socialising with their friends and having fun. Some are scared they will be hurt&nbsp;again.</p>
           <p>Sharing or liking fight videos rewards those filming by giving them an audience and helping it grow and encourages those starting fights to do it again.</p>
+-->
+        <ul>
+          <li>More people see what happened – which can be embarrassing.</li>
+          <li>Friends and family also see the fight.</li>
+          <li>It is a permanent reminder of the fight.</li>
+          <li>They are linked to the fight forever.</li>
+          <li>Some find it hard to go to school and concentrate in class.</li>
+          <li>Some are afraid they will be hurt again.</li>
+          <li>Some lose interest in socialising and having fun.</li>
+        </ul>
+
         </div>
         <div class="col-lg-3">
           <div style="position: relative;">
@@ -60,187 +72,12 @@
       </div>
     </div>
   </section>
-  
-  
-  <style>
-.cb-slideshow,
-.cb-slideshow:after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-}
-.cb-slideshow:after {
-    content: '';
-    background: transparent url(images/pattern.png) repeat top left;
-}
-.cb-slideshow li span {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: none;
-    opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 36s linear infinite 0s;
-}
-.cb-slideshow li div {
-    z-index: 1000;
-    position: absolute;
-    bottom: 30px;
-    left: 0px;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    animation: titleAnimation 36s linear infinite 0s;
-}
-.cb-slideshow li div p {
-    font-family: 'Calligraffitti', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2em;
-    padding: 0 2em;
-/*    line-height: 6em;*/
-    color: rgba(255,255,255,0.8);
-  position: absolute;
-  top: -200px;
 
-}
-.cb-slideshow li:nth-child(1) span { background-image: url(images/anxiety-girl.png) }
-.cb-slideshow li:nth-child(2) span {
-    background-image: url(images/girl-upset.jpg);
-    animation-delay: 6s;
-}
-.cb-slideshow li:nth-child(3) span {
-    background-image: url(images/girl-crying.jpg);
-    animation-delay: 12s;
-}
-.cb-slideshow li:nth-child(4) span {
-    background-image: url(images/woman.png);
-    animation-delay: 18s;
-}
-.cb-slideshow li:nth-child(5) span {
-    background-image: url(images/hero-girl-3.jpg);
-    animation-delay: 24s;
-}
-.cb-slideshow li:nth-child(6) span {
-    background-image: url(images/hero-boy-bruised.png);
-    animation-delay: 30s;
-}
-.cb-slideshow li:nth-child(2) div {
-    animation-delay: 6s;
-}
-.cb-slideshow li:nth-child(3) div {
-    animation-delay: 12s;
-}
-.cb-slideshow li:nth-child(4) div {
-    animation-delay: 18s;
-}
-.cb-slideshow li:nth-child(5) div {
-    animation-delay: 24s;
-}
-.cb-slideshow li:nth-child(6) div {
-    animation-delay: 30s;
-}
-@keyframes imageAnimation { 
-	0% {
-	    opacity: 0;
-	    animation-timing-function: ease-in;
-	}
-	8% {
-	    opacity: 1;
-	    transform: scale(1.05);
-	    animation-timing-function: ease-out;
-	}
-	17% {
-	    opacity: 1;
-	    transform: scale(1.1);
-	}
-	22% {
-		opacity: 0;
-		-webkit-transform: scale(1.1) translateY(-20%);
-	}
-	25% {
-	    opacity: 0;
-	    -transform: scale(1.1) translateY(-100%);
-	}
-	100% { opacity: 0 }
-}
-
-@keyframes titleAnimation { 
-	0% {
-	    opacity: 0;
-	    transform: translateY(-50%);
-	}
-	8% {
-	    opacity: 1;
-	}
-	19% {
-	    opacity: 0;
-	    transform: translateY(-50%);
-	}
-	25% { opacity: 0 }
-	100% { opacity: 0 }
-}
-/* Show at least something when animations not supported */
-.no-cssanimations .cb-slideshow li span{
-	opacity: 1;
-}
-@media screen and (max-width: 1140px) { 
-	.cb-slideshow li div p { font-size: 3em; }
-}
-@media screen and (max-width: 600px) { 
-	.cb-slideshow li div p { font-size: 3em }
-}
-  </style>
   
-  
-<!--
-  <div id="slide-holder">
-    <img src="images/anxiety-girl.png" style="width: 100vw; float: left;"/>
-    <img src="images/girl-upset.jpg" style="width: 100vw; float: left;"/>
-    <img src="images/boy-upset.png" style="width: 100vw; float: left;"/>
-    <img src="images/hero-boy.png" style="width: 100vw; float: left;"/>
-  </div>
--->
-
-  <section class="quotation">
-    
-        <ul class="cb-slideshow">
-            <li><span>Image 01</span>
-              <div>
-                <p>Five thousand people 'liked' a video of my friend getting beaten&nbsp;up&nbsp;at&nbsp;school.</p>
-              </div>
-            </li>
-            <li><span>Image 02</span><div><p>Quote</p></div></li>
-            <li><span>Image 03</span><div><p>Quote</p></div></li>
-            <li><span>Image 04</span><div><p>Quote</p></div></li>
-            <li><span>Image 05</span><div><p>Quote</p></div></li>
-            <li><span>Image 06</span><div><p>Quote</p></div></li>
-        </ul>    
-    
-    <div class="mask">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <span class="divider-top"></span>
-<!--
-            <p>Five thousand people 'liked' a video of my friend getting beaten&nbsp;up&nbsp;at&nbsp;school.</p>
-            <p>I never realised that liking fights made&nbsp;things&nbsp;worse.</p>
---><p> &nbsp; </p>
-            <span class="divider-bottom"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
+   <section class="cta">
     <div class="container">
       <div class="row justify-content-around">
+<!--
         <div class="col-lg-4 col-md-6">
           <h2 class="reasons">Five reasons to not&nbsp;share&nbsp;fights</h2>
           <ul>
@@ -251,14 +88,101 @@
             <li>You want school to be safe</li>
           </ul>
         </div>
+-->
+        <div class="col-sm-10" style="text-align: center;">
+          <h2 class="dealing">How sharing and liking fights fuels violence</h2>
+          <ul>
+            <li>It gives violence a voice – giving it power.</li>
+            <li>It rewards those filming by giving them an audience.</li>
+            <li>It encourages those who bully to be violent.</li>
+            <li>It makes fighting seem normal and accepted.</li>
+            <li>It gives those fighting attention and status – which spurs them on.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+
+  <section class="quotation">
+
+    <ul class="slideshow">
+      <li>
+        <span></span>
+        <div>
+          <p>Five thousand people 'liked' a video of my friend getting beaten up at&nbsp;school.</p>
+        </div>
+      </li>
+      <li>
+        <span></span>
+        <div>
+          <p>My mate hasn't been the same since the fight.<br>He doesn't want to hang out anymore and never seems&nbsp;happy.</p>
+        </div>
+      </li>
+      <li><span></span>
+        <div>
+          <p>I had no idea sharing a fight caused so much grief. Next time I'll just scroll&nbsp;past.</p>
+        </div>
+      </li>
+      <li><span></span>
+        <div>
+          <p>I don't want to go to school&nbsp;anymore.</p>
+        </div>
+      </li>
+      <li><span></span>
+        <div>
+          <p>Why are we giving them an&nbsp;audience?</p>
+        </div>
+      </li>
+      <li><span></span>
+        <div>
+          <p>I'm scared they're going to do it&nbsp;again.</p>
+        </div>
+      </li>
+    </ul>
+
+<!--
+    <div class="mask">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <span class="divider-top"></span>
+            
+            <p>Five thousand people 'liked' a video of my friend getting beaten&nbsp;up&nbsp;at&nbsp;school.</p>
+            <p>I never realised that liking fights made&nbsp;things&nbsp;worse.</p>
+
+            <p> &nbsp; </p>
+            <span class="divider-bottom"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="row justify-content-around">
+<!--
         <div class="col-lg-4 col-md-6">
+          <h2 class="reasons">Five reasons to not&nbsp;share&nbsp;fights</h2>
+          <ul>
+            <li class="slideInLeft">It fuels more fights</li>
+            <li>It encourages the bullies</li>
+            <li>More kids get hurt</li>
+            <li>It's against the law</li>
+            <li>You want school to be safe</li>
+          </ul>
+        </div>
+-->
+        <div class="col-sm-10" style="text-align: center;">
           <h2 class="dealing">How should I&nbsp;deal with fight&nbsp;videos?</h2>
           <ul>
-            <li>Scroll past them</li>
-            <li>Don't share them with friends</li>
-            <li>Report them as inappropriate</li>
-            <li>Tell friends sharing is illegal</li>
-            <li>Suggest other videos to share</li>
+            <li>Scroll past them.</li>
+            <li>Don't share them with friends.</li>
+            <li>Report them as inappropriate.</li>
+            <li>Tell friends sharing is illegal.</li>
+            <li>Suggest other videos to share.</li>
           </ul>
         </div>
       </div>
@@ -271,7 +195,7 @@
         <div class="col-sm-10">
           <h2>Need someone to talk&nbsp;to?</h2>
           <p>If you find this topic upsetting or worrying and need someone to talk to, you can contact a number of confidential and supportive&nbsp;services.</p>
-          <hr style="color: white;"/>
+          <hr style="color: white;" />
         </div>
       </div>
       <div class="row justify-content-around contact__details">
@@ -279,14 +203,14 @@
         <div class="col-md-3">
           <h3>Kids Helpline</h3>
           <p><img src="images/mobile.svg" />1800 55 1800</p>
-          <p><img src="images/web-inverse.svg" /><a href="//kidshelpline.com.au" target="_blank">kidshelpline.com.au</a></p>          
+          <p><img src="images/web-inverse.svg" /><a href="//kidshelpline.com.au" target="_blank">kidshelpline.com.au</a></p>
         </div>
         <div class="col-md-3">
           <h3>Headspace</h3>
           <p><img src="images/mobile.svg" />1800 650 890</p>
           <p><img src="images/web-inverse.svg" /><a href="//headspace.org.au" target="_blank">headspace.org.au</a></p>
         </div>
-          <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
       </div>
     </div>
   </section>
@@ -299,43 +223,43 @@
           <div class="container">
             <h3 class="js-show-more">More information for parents</h3>
             <div id="js-hidden-content" class="hidden-content" style="display: none;">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-              <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              <p><a href="https://www.education.wa.edu.au/violence" target="_blank" style="color: #00A296; border-bottom: 1px solid;">Department of Education</a> – information about addressing violence in schools, including how you can get support from your children's school.</p>
+              <p><a href="https://www.esafety.gov.au/parents" target="_blank" style="color: #00A296;  border-bottom: 1px solid;">E-Safety Commissioner</a> – tips and advice on helping your children have safe and enjoyable experiences online.</p>
             </div>
           </div>
         </div>
         <div class="col-1">
-          <h3 class="js-show-more"><img src="images/cross.svg" id="js-show-more"/></h3>
+          <h3 class="js-show-more"><img src="images/cross.svg" id="js-show-more" /></h3>
         </div>
       </div>
-    </div>  
+    </div>
   </section>
 
   <footer class="footer">
-    <div class="container">        
+    <div class="container">
       <small>Share the message</small><br>
-        <a class="facebook" onclick="socialWindow('https://www.facebook.com/sharer/sharer.php?u=www.education.wa.edu.au')" target="_blank">
-          <img src="images/facebook.svg" alt="Share on Facebook" />
-        </a>
-        <!--<a class="twitter" onclick="socialWindow('https://wa.me/?text=Sharing fights fuels violence. www.education.wa.edu.au')" target="_blank">
+      <a class="facebook" onclick="socialWindow('https://www.facebook.com/sharer/sharer.php?u=www.education.wa.edu.au')" target="_blank">
+        <img src="images/facebook.svg" alt="Share on Facebook" />
+      </a>
+      <!--<a class="twitter" onclick="socialWindow('https://wa.me/?text=Sharing fights fuels violence. www.education.wa.edu.au')" target="_blank">
           <img src="images/twitter.svg" alt="Share on Twitter" />
         </a> -->
-        <a class="whatsapp" onclick="socialWindow('https://twitter.com/home?status=www.education.wa.edu.au Sharing fights fuels violence.')" target="_blank">
-          <img src="images/whatsapp.svg" alt="Share on Whatsapp" />
-        </a>
-        <a class="email" href="mailto:?subject=Sharing fights fuels violence&amp;body=Check out this site https://www.www.education.wa.edu.au" target="_blank">
-          <img src="images/email.svg" alt="Share on Email" />
-        </a>
-    </div>      
-     
+      <a class="whatsapp" onclick="socialWindow('https://twitter.com/home?status=www.education.wa.edu.au Sharing fights fuels violence.')" target="_blank">
+        <img src="images/whatsapp.svg" alt="Share on Whatsapp" />
+      </a>
+      <a class="email" href="mailto:?subject=Sharing fights fuels violence&amp;body=Check out this site https://www.www.education.wa.edu.au" target="_blank">
+        <img src="images/email.svg" alt="Share on Email" />
+      </a>
+    </div>
+
     <p></p>
-    
+
     <div class="container">
       <div class="row justify-content-center">
         <img src="images/doe-logo-inverse.svg" class="doe-logo" />
         <small class="disclaimer">
           All contents copyright Government of Western Australia, unless otherwise&nbsp;stated.
-        </small>        
+        </small>
       </div>
     </div>
   </footer>
@@ -377,23 +301,25 @@
     };
 
     // toggle more information accordion
-//    var showMore = document.getElementById("js-show-more");
-//    var hiddenContent = document.getElementById("js-hidden-content");
-//    showMore.onclick = function () {
-//      if (hiddenContent.classList.contains('d-block')) {
-//        hiddenContent.classList.remove("d-block");
-//        showMore.classList.remove("cross");
-//      }
-//      else {
-//        hiddenContent.classList.add("d-block");
-//        showMore.classList.add("cross");
-//      }
-//    }
+    //    var showMore = document.getElementById("js-show-more");
+    //    var hiddenContent = document.getElementById("js-hidden-content");
+    //    showMore.onclick = function () {
+    //      if (hiddenContent.classList.contains('d-block')) {
+    //        hiddenContent.classList.remove("d-block");
+    //        showMore.classList.remove("cross");
+    //      }
+    //      else {
+    //        hiddenContent.classList.add("d-block");
+    //        showMore.classList.add("cross");
+    //      }
+    //    }
 
-    $('h3.js-show-more').click( function() {
+    $('h3.js-show-more').click(function() {
       $('#js-hidden-content').slideToggle(500)
       $('#js-show-more').toggleClass('cross');
-      $("html, body").animate({ scrollTop: $(document).height() }, 500);
+      $("html, body").animate({
+        scrollTop: $(document).height()
+      }, 500);
     });
   </script>
 
