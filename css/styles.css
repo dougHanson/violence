@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://p.typekit.net/p.css?s=1&k=kun2rfu&ht=tk&f=10881.10882.10884.10885.15357.15358.15361.15362.32874.32875&a=16296350&app=typekit&e=css");
 @import url("https://fonts.googleapis.com/css?family=Calligraffitti|Open Sans&display=swap");
 @font-face {
@@ -2689,7 +2688,7 @@ html {
 /*# sourceMappingURL=bootstrap-grid.min.css.map */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: calc(15px + 4 * ((100vw - 360px) / (1560)));
+  font-size: calc(16px + 4 * ((100vw - 360px) / (1560)));
   overflow-x: hidden;
   transition: all 500ms; }
 
@@ -2858,7 +2857,7 @@ li {
       height: 42em; } }
 
 .intro {
-  background-image: url(../images/doodles.png);
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/v1565161788/public-websites/no-voice-to-violence/doodles.png");
   background-size: 50%;
   background-position: center;
   padding: 2em 0; }
@@ -2925,8 +2924,7 @@ li {
       background-repeat: none;
       opacity: 0;
       z-index: 0;
-      animation: imageAnimation 48s linear infinite 0s;
-      filter: grayscale(100%); }
+      animation: imageAnimation 48s linear infinite 0s; }
     .quotation .slideshow li div {
       z-index: 1000;
       position: absolute;
@@ -2955,125 +2953,58 @@ li {
         @media (min-width: 992px) {
           .quotation .slideshow li div p {
             font-size: 2.5em; } }
-  .quotation .slideshow:after {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 0;
-    content: '';
-    background: rgba(0, 0, 0, 0.6); }
-  .quotation .slideshow li:nth-child(1) span {
-    background-image: url(../images/1.jpg);
-    background-position: 50% 30%; }
-  .quotation .slideshow li:nth-child(2) span {
-    background-image: url(../images/2.jpg);
-    animation-delay: 8s; }
-  .quotation .slideshow li:nth-child(3) span {
-    background-image: url(../images/3.jpg);
-    animation-delay: 16s; }
-  .quotation .slideshow li:nth-child(4) span {
-    background-image: url(../images/anxiety-girl.png);
-    animation-delay: 24s; }
-  .quotation .slideshow li:nth-child(5) span {
-    background-image: url(../images/5.jpg);
-    animation-delay: 32s; }
-  .quotation .slideshow li:nth-child(6) span {
-    background-image: url(../images/6.jpg);
-    animation-delay: 40s; }
-  .quotation .slideshow li:nth-child(2) div {
-    animation-delay: 8s; }
-  .quotation .slideshow li:nth-child(3) div {
-    animation-delay: 16s; }
-  .quotation .slideshow li:nth-child(4) div {
-    animation-delay: 24s; }
-  .quotation .slideshow li:nth-child(5) div {
-    animation-delay: 32s; }
-  .quotation .slideshow li:nth-child(6) div {
-    animation-delay: 40s; }
-
-@keyframes imageAnimation {
-  0% {
-    opacity: 0;
-    animation-timing-function: ease-in; }
-  8% {
-    opacity: 1;
-    transform: scale(1.05);
-    animation-timing-function: ease-out; }
-  17% {
-    opacity: 1;
-    transform: scale(1.1); }
-  22% {
-    opacity: 0;
-    transform: scale(1.1) translateY(-10%); }
-  25% {
-    opacity: 0;
-    -transform: scale(1.1) translateY(-40%); }
-  100% {
-    opacity: 0; } }
-
-@keyframes titleAnimation {
-  0% {
-    opacity: 0; }
-  8% {
-    opacity: 1; }
-  19% {
-    opacity: 0; }
-  25% {
-    opacity: 0; }
-  100% {
-    opacity: 0; } }
-  .quotation .divider-top:before, .quotation .divider-top:after {
-    content: '';
-    position: absolute; }
-  .quotation .divider-top:before {
-    border-top: 1px solid white;
-    left: 10%;
-    top: -3.5em;
-    width: 80%; }
-    @media (min-width: 992px) {
-      .quotation .divider-top:before {
-        left: 0;
-        width: 40%; } }
-  @media (min-width: 992px) {
-    .quotation .divider-top:after {
-      border-bottom: 1px solid white;
-      left: 60%;
-      top: -3.5em;
-      width: 40%; } }
-  .quotation .divider-bottom:before, .quotation .divider-bottom:after {
-    content: '';
-    position: absolute;
-    left: 0; }
-  .quotation .divider-bottom:before {
-    border-bottom: 1px solid white;
-    bottom: -1.5em;
-    left: 10%;
-    width: 80%; }
-    @media (min-width: 992px) {
-      .quotation .divider-bottom:before {
-        left: 0;
-        width: 100%; } }
-  @media (min-width: 992px) {
-    .quotation .divider-bottom:after {
-      content: '\“';
-      color: white;
-      font-family: 'Calligraffitti', cursive;
-      font-size: 21em;
+    .quotation .slideshow:after {
       position: absolute;
-      top: -0.5em;
-      left: 42%; } }
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      z-index: 0;
+      content: '';
+      background: rgba(0, 0, 0, 0.6); }
 
-.mask {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.65);
-  padding: 12em 0 9em; }
+.slideshow li:nth-child(1) span {
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/t_grayscale/v1565161809/public-websites/no-voice-to-violence/1.jpg");
+  background-position: 50% 30%; }
+
+.slideshow li:nth-child(2) span {
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/t_grayscale/v1565161808/public-websites/no-voice-to-violence/2.jpg");
+  animation-delay: 8s; }
+
+.slideshow li:nth-child(3) span {
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/t_grayscale/v1565161834/public-websites/no-voice-to-violence/3.jpg");
+  animation-delay: 16s; }
+
+.slideshow li:nth-child(4) span {
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/t_grayscale/v1565161791/public-websites/no-voice-to-violence/anxiety-girl.png");
+  animation-delay: 24s; }
+
+.slideshow li:nth-child(5) span {
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/t_grayscale/v1565161786/public-websites/no-voice-to-violence/5.jpg");
+  animation-delay: 32s; }
+
+.slideshow li:nth-child(6) span {
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/t_grayscale/v1565161773/public-websites/no-voice-to-violence/6.jpg");
+  animation-delay: 40s; }
+
+.slideshow li:nth-child(2) div {
+  animation-delay: 8s; }
+
+.slideshow li:nth-child(3) div {
+  animation-delay: 16s; }
+
+.slideshow li:nth-child(4) div {
+  animation-delay: 24s; }
+
+.slideshow li:nth-child(5) div {
+  animation-delay: 32s; }
+
+.slideshow li:nth-child(6) div {
+  animation-delay: 40s; }
 
 .cta {
   background: #231f20;
-  background-image: url(../images/doodles.png);
+  background-image: url("https://res.cloudinary.com/doewa/image/upload/v1565161788/public-websites/no-voice-to-violence/doodles.png");
   background-size: 50%;
   background-position: top;
   border-top: 1px solid #888;
@@ -3092,11 +3023,7 @@ li {
   .cta h2.dealing {
     background: linear-gradient(135deg, #feab3a 0%, #edd448 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 1.5em; }
-    @media (min-width: 768px) {
-      .cta h2.dealing {
-        margin-top: 0; } }
+    -webkit-text-fill-color: transparent; }
 
 .contact {
   padding: 4em 0;
@@ -3107,8 +3034,7 @@ li {
   background-size: contain;
   background-position: center;
   background-blend-mode: screen;
-  color: white;
-  text-align: center; }
+  color: white; }
   .contact h2 {
     margin-bottom: .5em; }
   .contact h3 {
@@ -3124,11 +3050,12 @@ li {
       .contact img {
         display: block;
         float: left; } }
-  .contact__details {
-    text-align: center; }
-    @media (min-width: 768px) {
-      .contact__details {
-        text-align: left; } }
+  @media (min-width: 768px) {
+    .contact__details {
+      text-align: left; } }
+  @media (min-width: 768px) {
+    .contact {
+      text-align: center; } }
 
 .more-info {
   padding: 3em 0; }
@@ -3227,6 +3154,38 @@ footer {
     filter: hue-rotate(0deg); }
   to {
     filter: hue-rotate(-360deg); } }
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in; }
+  8% {
+    opacity: 1;
+    transform: scale(1.05);
+    animation-timing-function: ease-out; }
+  17% {
+    opacity: 1;
+    transform: scale(1.1); }
+  22% {
+    opacity: 0;
+    transform: scale(1.1) translateY(-10%); }
+  25% {
+    opacity: 0;
+    -transform: scale(1.1) translateY(-40%); }
+  100% {
+    opacity: 0; } }
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0; }
+  8% {
+    opacity: 1; }
+  19% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
 
 @keyframes tada {
   from {
