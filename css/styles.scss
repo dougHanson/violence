@@ -563,7 +563,6 @@ li {
       background: white;
       color: $brand-primary;
     }
-    
   }
 
   &__content {
@@ -578,8 +577,8 @@ li {
   }
 
   .cross {
-    transition: all 0.2;
-    animation-duration: 1s;
+    transition: all 0.2s;
+    animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-name: rotateCross;    
   }

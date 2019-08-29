@@ -16,7 +16,7 @@
     // display logo if mobile fight is clicked
     mobileFight.onclick = function(e) {
       logo.classList.add("logo-visible");
-    }
+    };
 
     // open share functionality in popup window
     function socialWindow(url) {
@@ -30,7 +30,7 @@
     function loaded() {
       var preload = document.getElementById("preload");
       preload.classList.remove("delay-animations");
-    };
+    }
 
     // toggle more information accordion
     var showMore = document.getElementById("js-show-more");
@@ -45,4 +45,4 @@
         hiddenContent.classList.add("d-block");
         cross.classList.add("cross");
       }
-    }
+    };
