@@ -29,13 +29,13 @@ gulp.task('compile-sass', function() {
   return gulp.src('./css/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('./css'))         // compile sass to working folder
-    .pipe(gulp.dest('./dist/css'));  // compile sass to dist folder
+    //.pipe(gulp.dest('./dist/css'));  // compile sass to dist folder
 });
 
 
 // Minify CSS (concatenate, auto-prefix and minify)
 gulp.task('minify-css', gulp.series('compile-sass', function() {
-  return gulp.src(['./dist/css/**/*.css'])
+  return gulp.src(['./css/**/*.css'])
     .pipe(concat('styles.min.css'))
     .pipe(autoprefix('last 2 versions'))
     .pipe(minifyCSS())
@@ -46,8 +46,8 @@ gulp.task('minify-css', gulp.series('compile-sass', function() {
 // Minify JS (concatenate and minify)
 gulp.task('minify-js', function() {
   return gulp.src('./js/**/*.js')
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('./dist/js'))
+    .pipe(concat('main.min.js'))
+    //.pipe(gulp.dest('./dist/js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/js'));
 });
@@ -55,8 +55,9 @@ gulp.task('minify-js', function() {
 
 // Make CSS path production ready (.min)
 gulp.task('replace', function() {
-  return gulp.src(["./index.html"])
+  return gulp.src(['./index.html'])
     .pipe(replace('styles.css', 'styles.min.css'))
+    .pipe(replace('main.js', 'main.min.js'))
     .pipe(gulp.dest('./dist'))
 });
 
@@ -89,12 +90,12 @@ gulp.task('compress-images', gulp.series('copy', function() {
 // Watch Files For Changes
 gulp.task('watch', gulp.series('compile-sass', function() {
   gulp.watch(['js/**/*.js', '!js/plugins/**/*.js'], gulp.series('lint-js', 'minify-js'));
-  gulp.watch('css/**/*.scss', gulp.series('minify-css'));
+  gulp.watch('css/**/*.scss');
 }));
 
 
 gulp.task('clean', function () {
-    return gulp.src('./dist', {read: false})
+    return gulp.src('./dist', {read: false, allowEmpty: true})
         .pipe(clean());
 });
 
